@@ -23,31 +23,17 @@ const ContactPage = () => {
           <ul className="mb-8">
             <li className="flex text-lg mb-6 gap-3 justify-start items-center">
               <MdOutlinePhone className="text-xl" />
-              <span>+91 6291925441</span>
+              <span>+91 8981256860</span>
             </li>
             <li className="flex text-lg mb-6 gap-3 justify-start items-center">
               <SlEnvolope className="text-xl" />
-              <span>mhvpnguide@gmail.com</span>
+              <span>whiimsyteam@gmail.com</span>
             </li>
             <li className="flex text-lg mb-6 gap-3 justify-start items-center">
               <MdOutlineLocationOn className="text-2xl laptop:text-2xl" />
               <span>Kolkata, West Bengal, India</span>
             </li>
           </ul>
-          <div>
-            <p className="mb-3">
-              <b>Company Information</b>
-            </p>
-            <div>
-              Vpnguide is part of{" "}
-              <Link
-                href="https://velocityclick.in/"
-                className="text-bluelink hover:underline"
-              >
-                Velocity Click.
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
     </section>

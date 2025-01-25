@@ -2,24 +2,10 @@
 User-agent: *
 Allow: /
 Allow: /about
-Allow: /reviews
-Allow: /vpn-explained
-Allow: /vpn-explained/what-is-a-vpn-service
-Allow: /vpn-explained/how-does-a-vpn-work
-Allow: /vpn-explained/what-is-vpn-used-for
-Allow: /vpn-explained/are-vpn-really-worth-it
-Allow: /vpn-explained/vpn-logging-policies
-Allow: /guides
-Allow: /guides/hide-your-ip-address
-Allow: /guides/what-can-people-do-with-your-ip-address
-Allow: /guides/is-my-vpn-working
-Allow: /guides/check-ip-address
-Allow: /about/how-we-review-vpn
-Allow: /about/how-we-make-money
 Allow: /contact-us
 
 # Block all crawlers for /accounts (if applicable)
 User-agent: *
 Disallow: /admin
 
-Sitemap: https://vpns.guide/sitemap.xml
+Sitemap: https://whiimsy.in/sitemap.xml
