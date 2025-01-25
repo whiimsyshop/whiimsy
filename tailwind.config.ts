@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 import {nextui} from "@nextui-org/react";
 
@@ -38,40 +37,4 @@ const config: Config = {
   darkMode: "class",
   plugins: [nextui()]
 };
-
-module.exports = {
-  theme: {
-    extend: {
-      dropShadow: {
-        'md': '4px 4px 10px rgba(0, 0, 0, 0.3)',
-      },
-    },
-  },
-  plugins: [
-    require('@tailwindcss/forms'),
-    // other plugins…
-  ],
-};
-
-// tailwind.config.js
-module.exports = {
-  content: [
-    './src/**/*.{html,js,ts,jsx,tsx}',
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-
-
-// postcss.config.js
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  }
-}
-
-
 export default config;
