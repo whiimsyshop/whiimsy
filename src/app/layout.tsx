@@ -27,8 +27,8 @@ const inknutAntiqua = Inknut_Antiqua({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | VPNs Guide",
-    default: "VPNs Guide",
+    template: "%s | Whiimsy",
+    default: "Whiimsy",
   },
 };
 

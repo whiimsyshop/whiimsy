@@ -16,15 +16,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/react";
-import {
-  ChevronDown,
-  Lock,
-  Activity,
-  Flash,
-  Server,
-  TagUser,
-  Scale,
-} from "./Icons.jsx";
+import { ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale } from "./Icons.jsx";
 import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -87,10 +79,7 @@ const NextUiNavbar: React.FC<NavbarProps> = ({ navdata }) => {
           <DropdownMenu aria-label="Dropdown menu">
             {item.subnav.map((subitem: SubnavItem, subidx: number) => (
               <DropdownItem key={subidx}>
-                <Link
-                  href={subitem.link}
-                  className="px-2 py-1 text-inherit w-full"
-                >
+                <Link href={subitem.link} className="px-2 py-1 text-inherit w-full">
                   {subitem.name}
                 </Link>
               </DropdownItem>
@@ -132,10 +121,7 @@ const NextUiNavbar: React.FC<NavbarProps> = ({ navdata }) => {
               <DropdownMenu aria-label="Mobile dropdown menu">
                 {item.subnav.map((subitem: SubnavItem, subidx: number) => (
                   <DropdownItem key={subidx}>
-                    <Link
-                      href={subitem.link}
-                      className="px-2 py-1 text-inherit w-full"
-                    >
+                    <Link href={subitem.link} className="px-2 py-1 text-inherit w-full">
                       {subitem.name}
                     </Link>
                   </DropdownItem>
@@ -154,18 +140,36 @@ const NextUiNavbar: React.FC<NavbarProps> = ({ navdata }) => {
     return (
       <Navbar onMenuOpenChange={setIsMenuOpen} className="w-full">
         <NavbarContent justify="center">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="laptop:hidden"
-          />
+          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="laptop:hidden" />
           <Link href="/" className="text-inherit">
             <NavbarBrand>
               <Image src="/logo.png" alt="logo" height={30} width={30} />
-              <p className="font-bold text-inherit">VPNs GUIDE</p>
+              <p className="font-bold text-inherit">Whiimsy</p>
             </NavbarBrand>
           </Link>
-          <NavbarContent className="hidden laptop:flex gap-3 w-full">
-            {renderNavItems(navdata)}
+          <NavbarContent className="hidden laptop:flex gap-3 w-full" style={{ paddingLeft: "20em" }}>
+            {navdata.map((item) =>
+              item.mainHeading === "SHOP NOW" ? (
+                <a
+                  key={item.link}
+                  className="shop-now-button"
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#d6c2af")}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#e8d6c5")}
+                  onClick={() => window.open(item.link, "_blank")}
+                >
+                  {item.mainHeading}
+                </a>
+              ) : (
+                <a
+                  key={item.link}
+                  href={item.link}
+                  className="text-gray-800 hover:text-gray-600"
+                  style={{ paddingRight: "1rem" }}
+                >
+                  {item.mainHeading}
+                </a>
+              )
+            )}
           </NavbarContent>
         </NavbarContent>
         <div className="laptop:hidden">{renderMobileMenu(navdata)}</div>
@@ -175,19 +179,14 @@ const NextUiNavbar: React.FC<NavbarProps> = ({ navdata }) => {
     return (
       <Navbar onMenuOpenChange={setIsMenuOpen} className="w-full">
         <NavbarContent justify="center">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="laptop:hidden"
-          />
+          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="laptop:hidden" />
           <Link href="/" className="text-inherit">
             <NavbarBrand>
               <Image src="/logo.png" alt="logo" height={30} width={30} />
               <p className="font-bold text-inherit">VPNs GUIDE</p>
             </NavbarBrand>
           </Link>
-          <NavbarContent className="hidden laptop:flex gap-3 w-full">
-            {renderNavItems(specialnav)}
-          </NavbarContent>
+          <NavbarContent className="hidden laptop:flex gap-3 w-full">{renderNavItems(specialnav)}</NavbarContent>
         </NavbarContent>
         <div className="laptop:hidden">{renderMobileMenu(specialnav)}</div>
       </Navbar>

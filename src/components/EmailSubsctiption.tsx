@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [success, setSuccess] = useState(false);
 
   const handleSubscribe = (e) => {
@@ -23,22 +24,32 @@ const EmailSubscription = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <div className="bg-white shadow-lg rounded-2xl p-6 max-w-lg w-full">
-        <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">
-          Subscribe to our Newsletter
-        </h2>
-        <p className="text-center text-gray-600 mb-6">
-          Stay updated with the latest news, articles, and promotions!
-        </p>
+    <div className="flex flex-col items-center justify-center p-6">
+      <div className="bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.5)] rounded-2xl p-6 max-w-3xl w-full">
+        <h2 className="text-2xl font-bold text-center text-gray-800">Subscribe to our Newsletter</h2>
+        <p className="text-center text-gray-600 mb-6">Stay updated with the latest news, articles, and promotions!</p>
         {success ? (
-          <div className="text-center text-green-600 font-medium">
-            🎉 Thank you for subscribing!
-          </div>
+          <div className="text-center text-green-600 font-medium">🎉 Thank you for subscribing!</div>
         ) : (
           <form onSubmit={handleSubscribe} className="flex flex-col gap-4">
+            <label htmlFor="name" className="text-gray-700 font-medium" style={{ marginLeft: ".5rem" }}>
+              Name
+            </label>
+            <input
+              type="name"
+              style={{ marginTop: "-1rem" }}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+            <label htmlFor="email" className="text-gray-700 font-medium" style={{ marginLeft: ".5rem" }}>
+              Email
+            </label>
             <input
               type="email"
+              style={{ marginTop: "-1rem" }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"

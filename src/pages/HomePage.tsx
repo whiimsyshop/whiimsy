@@ -6,20 +6,27 @@ const Faq = dynamic(() => import("@/components/Faq"), { ssr: true });
 
 const HomePage = () => {
   return (
-    <main className="flex flex-col main-bg">
-      <div>
-      We pour our hearts into creating candles with the finest ingredients, 
-      hoping to fill your home with beautiful scents and a warm, cozy glow.
-      <img src="/demo.png" alt="hometag" />
-      This is home page
-    </div>
-        <Faq/>
-    </main>
+    <>
+      <header>
+        <div className="header-top">
+          <div className="banner_main container">
+            <div className="image-container">
+              <img
+                src="./home/HeroSection.webp"
+                alt="Candle Image"
+                id="candle-image"
+              />
+              <a href="https://whiimsy.mini.site" target="_blank">
+                Shop Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <Faq />
+      <EmailSubscription />
+    </>
   );
-}
-
-function App() {
-  return <EmailSubscription />;
-}
+};
 
 export default HomePage;

@@ -35,35 +35,29 @@ const content1: ContentArray = [
             <p>Mohit Singh <a href="https://track.vpns.guide/base2.php?cloid=1002&token4=faq&token5=IN">BLAH</a>. <span style="font-weight: 500;">Mohit Singh.</span></p>
           `,
   },
-{
+  {
     heading: "Question 4?",
     content: `
             <p>MOHIT. <span style="font-weight: 500;">Singh</span></p>
             <p>Blah</p>
           `,
   },
-{
+  {
     heading: "Question 5?",
     content: `
             <p>MOHIT. <span style="font-weight: 500;">Singh</span></p>
             <p>Blah</p>
           `,
   },
-
-  ];
+];
 
 const FAQ = () => {
   return (
     <div className="flex-col laptopl:px-96 px-5 my-5" id="faq">
-      <div className="text-4xl font-semibold pb-10">Frequently Asked Questions</div>
+      <div className="text-4xl font-semibold pb-6 text-center">Frequently Asked Questions</div>
       <Accordion variant="splitted">
         {content1.map((itm: ContentItem, idx: number) => (
-          <AccordionItem
-            key={idx}
-            aria-label={itm.heading}
-            title={itm.heading}
-            className="font-bold"
-          >
+          <AccordionItem key={idx} aria-label={itm.heading} title={itm.heading} className="font-bold">
             <div
               dangerouslySetInnerHTML={{ __html: itm.content }}
               className="customAccr bg-gray-100 p-3 rounded-lg font-normal"

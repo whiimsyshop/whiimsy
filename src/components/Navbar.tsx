@@ -72,29 +72,29 @@ const NavbarComp = () => {
 
   const navdata: NavItem[] = [
     {
-      mainHeading: "HOME",
-      link: "/main",
-    },
-    {
-      mainHeading: "ABOUT",
+      mainHeading: "About",
           link: "/about",
         },
-        {
-          mainHeading: "Free Candle",
+    {
+      mainHeading: "Free Candle",
           link: "/freecandle",
         },
     {
-      mainHeading: "CONTACT",
+      mainHeading: "Services",
+          link: "/services",
+        },
+    {
+      mainHeading: "Contact",
       link: "/contact-us",
     },
     {
-      mainHeading: "GIVEWAY",
+      mainHeading: "Giveway",
       link: "/giveway",
-    },
+        },
     {
       mainHeading: "SHOP NOW",
-      link: "whiimsy.mini.site",
-    },
+      link: "https://whiimsy.mini.site",
+        },
   ];
 
   if (loading) {

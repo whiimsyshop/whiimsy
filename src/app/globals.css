@@ -24,6 +24,57 @@ nav > header > ul {
 .nested-ul {
   @apply laptop:justify-center gap-10;
 }
+/* -------------------------- Home Page -------------------------- */
+
+.image-container {
+  width: 106%; /* Set the desired width */
+  height: 40rem; /* Set the desired height */
+  overflow: hidden; /* Crop overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image inside the div */
+.image-container img {
+  width: 100%; /* Fit image to div width */
+  height: 100%; /* Fit image to div height */
+  object-fit: cover; /* Preserve aspect ratio, crop excess */
+}
+
+.image-container a {
+  position: absolute; /* Absolute position relative to the container */
+  bottom: 5rem; /* Position from the bottom */
+  right: 46rem; /* Position from the right */
+  padding: 15px 40px;
+  background-color: #e8d6c5;
+  color: #5c4033;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.image-container a:hover {
+  background-color: #d6c2af;
+}
+
+.shop-now-button {
+  padding: 5px 10px;
+  background-color: #e8d6c5;
+  color: #5c4033;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
 
 /* -------------------------- Contact Form -------------------------- */
 .ContactForm {
@@ -37,7 +88,6 @@ nav > header > ul {
 .contact-btn {
   @apply inline-block text-center text-white bg-blue-500 rounded cursor-pointer transition-all duration-[800ms];
 }
-
 
 /* -------------------------- Modal -------------------------- */
 .customModal > button {
