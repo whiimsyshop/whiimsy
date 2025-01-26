@@ -1,6 +1,6 @@
+import HeaderBox from '@/components/HeaderBox';
 import Link from "next/link";
 import Table1 from "../components/Table1";
-import TopCard from "@/components/TopCard";
 
 const cookiesDataTable1 = [
   {
@@ -82,7 +82,7 @@ const CookiesPolicy = () => {
   return (
     <section className="w-full laptop:justify-center laptop:items-center">
         <div className="w-full">
-          <TopCard title="Cookies Policy" />
+          <HeaderBox title="Cookies Policy" />
         </div>
       <div className="px-3 pt-5 pb-10 tablet:flex tablet:justify-center tablet:items-center">
         <div className="px-3 pt-6 tablet:w-2/3">

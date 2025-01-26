@@ -79,6 +79,8 @@ nav > header > ul {
 /* -------------------------- Contact Form -------------------------- */
 .ContactForm {
   @apply bg-gray-100 rounded shadow p-6;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 .contact-Inp {

@@ -1,11 +1,11 @@
 import Link from "next/link";
-import TopCard from "@/components/TopCard";
+import HeaderBox from "@/components/HeaderBox";
 
 const Term_Condition = () => {
   return (
     <section className="w-full laptop:justify-center laptop:items-center">
       <div className="w-full">
-          <TopCard title="Website Terms Of Use" />
+          <HeaderBox title="Website Terms Of Use" />
         </div>
       <div className="px-3 pt-5 pb-10 tablet:flex tablet:justify-center tablet:items-center">
         <div className="px-3 pt-6 tablet:w-2/3">

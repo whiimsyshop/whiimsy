@@ -143,7 +143,7 @@ const NextUiNavbar: React.FC<NavbarProps> = ({ navdata }) => {
           <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="laptop:hidden" />
           <Link href="/" className="text-inherit">
             <NavbarBrand>
-              <Image src="/logo.png" alt="logo" height={30} width={30} />
+              <Image src="/logo.jpg" alt="logo" height={30} width={30} />
               <p className="font-bold text-inherit">Whiimsy</p>
             </NavbarBrand>
           </Link>
@@ -182,7 +182,7 @@ const NextUiNavbar: React.FC<NavbarProps> = ({ navdata }) => {
           <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="laptop:hidden" />
           <Link href="/" className="text-inherit">
             <NavbarBrand>
-              <Image src="/logo.png" alt="logo" height={30} width={30} />
+              <Image src="/logo.jpg" alt="logo" height={30} width={30} />
               <p className="font-bold text-inherit">VPNs GUIDE</p>
             </NavbarBrand>
           </Link>

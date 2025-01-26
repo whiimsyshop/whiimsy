@@ -39,6 +39,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
+    <head>
+     {/* <!-- Standard favicon --> */}
+    <link rel="shortcut icon" href="/favicon.ico" />
+    {/* <!-- Recommended favicon size for general browser display --> */}
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {/* <!-- Apple Touch Icon (at least 200x200px) --> */}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Whiimsy" />
+    {/* <!-- The Web App Manifest --> */}
+    <link rel="manifest" href="/site.webmanifest" />
+
+    {/* <!-- SEO Meta Tags --> */}
+    <meta
+          name="description"
+          content="Discover premium handcrafted candles for every mood, from soothing aromatherapy to elegant decor. Illuminate your space with eco-friendly, long-lasting fragrances.."
+        />
+        <meta name="author" content="Mohit Singh" />
+
+        {/* <!-- Meta Robots --> */}
+        <meta name="robots" content="index, follow" />
+
+        {/* Microsost Clarity */}
+
+        {/* Google Analytics */}
+
+
+    </head>
+
       <body
         className={`${kantumruyPro.variable} ${kaiseiTokumin.variable} ${inknutAntiqua.variable}`}
       >

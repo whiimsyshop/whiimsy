@@ -38,7 +38,7 @@ const ContactForm = () => {
     <section>
       {/* <h2 className="mb-6 font-bold text-3xl">Contact</h2> */}
       <div className="block">
-        <div className="ContactForm">
+        <div className="ContactForm style={{ paddingLeft: '8rem', paddingRight: '8rem' }}">
           <form
             id="contact-form"
             className="jsx-882709793"

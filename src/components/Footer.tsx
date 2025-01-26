@@ -13,7 +13,7 @@ const Footer = () => {
           {/* left */}
           <div className="order-1 mb-14 tablet:w-[40%] laptop:w-[50%]">
             <div className="flex justify-start items-center gap-2 text-2xl">
-              <Image src="/logo.png" alt="logo" height={50} width={50} />
+              <Image src="/logo.jpg" alt="logo" height={50} width={50} />
               <p className="font-bold text-inherit">WHIIMSY</p>
             </div>
             <p className="pt-5 text-lg laptopl:w-[80%]">
@@ -70,6 +70,12 @@ const Footer = () => {
               className="text-base tablet:text-sm mb-4 tablet:mb-2 hover:text-blue-700"
             >
               Free Candle
+            </Link>
+            <Link
+              href="/services"
+              className="text-base tablet:text-sm mb-4 tablet:mb-2 hover:text-blue-700"
+            >
+              Services
             </Link>
             <Link
               href="/giveway"

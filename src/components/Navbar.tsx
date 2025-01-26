@@ -77,19 +77,19 @@ const NavbarComp = () => {
         },
     {
       mainHeading: "Free Candle",
-          link: "/freecandle",
+          link: "/free-candle",
         },
     {
       mainHeading: "Services",
           link: "/services",
         },
     {
-      mainHeading: "Contact",
-      link: "/contact-us",
-    },
-    {
       mainHeading: "Giveway",
       link: "/giveway",
+        },
+    {
+      mainHeading: "Contact",
+      link: "/contact-us",
         },
     {
       mainHeading: "SHOP NOW",
