@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import EmailSubscription from "../components/EmailSubsctiption";
+import Trust from "../components/trust";
 
 const Faq = dynamic(() => import("@/components/Faq"), { ssr: true });
 
@@ -23,6 +24,7 @@ const HomePage = () => {
           </div>
         </div>
       </header>
+      <Trust />
       <Faq />
       <EmailSubscription />
     </>
