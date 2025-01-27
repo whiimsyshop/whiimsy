@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import EmailSubscription from "../components/EmailSubsctiption";
-import Trust from "../components/trust";
+import Trust from "@/components/trust";
+import Heart from '@/components/Heart';
 
 const Faq = dynamic(() => import("@/components/Faq"), { ssr: true });
 
@@ -27,6 +28,9 @@ const HomePage = () => {
       <Trust />
       <Faq />
       <EmailSubscription />
+          <div className="flex justify-center my-4"> {/* New container for centering */}
+                <Heart />
+          </div>
     </>
   );
 };

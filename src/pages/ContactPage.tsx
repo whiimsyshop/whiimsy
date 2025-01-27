@@ -7,11 +7,11 @@ import HeaderBox from "@/components/HeaderBox";
 
 const ContactPage = () => {
   return (
-    <section className="about-main laptop:w-full">
+    <section className="about-main laptop:w-full ">
       <div className="w-full">
         <HeaderBox title="Contact Us" />
       </div>
-      <div className="mt-24 flex flex-col gap-8 laptop:flex laptop:flex-row laptop:justify-center laptop:items-center tablet:px-0 laptop:px-20">
+      <div className="mt-24 flex flex-col gap-8 laptop:flex laptop:flex-row laptop:justify-center laptop:items-center tablet:px-0 laptop:px-20 px-6 md:px-6">
         <div className="laptop:w-1/2 px-2 ">
           <ContactForm />
         </div>

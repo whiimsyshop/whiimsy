@@ -12,7 +12,7 @@ const ServicesPage: React.FC = () => {
             const navbarHeight = document.querySelector('header')?.clientHeight || 0;
             const buttonContainerHeight = document.querySelector('.btn-header')?.clientHeight || 0;
             const mobileOffset = window.innerWidth <= 768 ? buttonContainerHeight : 0;
-            const offsetPosition = section.offsetTop - navbarHeight - mobileOffset;
+            const offsetPosition = section.offsetTop - navbarHeight - mobileOffset + 1;
 
             window.scrollTo({
                 top: offsetPosition,
@@ -41,17 +41,29 @@ const ServicesPage: React.FC = () => {
                     className="btn-header rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg bg-red-500 shadow-lg hover:shadow-xl transition-all duration-200"
                     onClick={() => handleScroll('section-3')}
                 >
-                    Fundraising
+                    Corporates
                 </button>
                 <button
                     className="btn-header rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg bg-red-500 shadow-lg hover:shadow-xl transition-all duration-200"
                     onClick={() => handleScroll('section-4')}
                 >
-                    wholesale
+                    Collaborations
                 </button>
                 <button
                     className="btn-header rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg bg-red-500 shadow-lg hover:shadow-xl transition-all duration-200"
                     onClick={() => handleScroll('section-5')}
+                >
+                    Fundraising
+                </button>
+                <button
+                    className="btn-header rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg bg-red-500 shadow-lg hover:shadow-xl transition-all duration-200"
+                    onClick={() => handleScroll('section-6')}
+                >
+                    Wholesale
+                </button>
+                <button
+                    className="btn-header rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg bg-red-500 shadow-lg hover:shadow-xl transition-all duration-200"
+                    onClick={() => handleScroll('section-7')}
                 >
                     Donations
                 </button>
@@ -68,7 +80,7 @@ const ServicesPage: React.FC = () => {
                 <p className='text-justify text-xl mt-6'>
                  Please click on the button below to find out more information.
                 </p>
-                 <Link href="/contact" className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200">Get in Touch</Link>
+                 <Link href="/contact" className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200">Coming Soon</Link>
             </div>
 
     <div className='flex w-full items-center justify-center lg:w-1/2'>
@@ -102,9 +114,50 @@ const ServicesPage: React.FC = () => {
     </div>
 </section>
 
+{/* Section 3 */}
+<section id="section-3" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row">
+              <div className='w-full lg:w-1/2 flex flex-col'>
+               <span className='text-3xl font-semibold mb-4'>Corporates</span>
+                <p className='text-justify text-xl'>
+                An opportunity to gift your customers and colleagues an exclusive scented product. Special attention is paid to the client's design, philosophy, budget and requirements.
+                </p>
+                <p className='text-justify text-xl mt-6'>
+                 Please click on the button below to find out more information.
+                </p>
+                 <Link href="/contact" className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200">Coming Soon</Link>
+            </div>
 
-            {/* Section 3 (same layout as Section 1) */}
-            <section id="section-3" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row">
+    <div className='flex w-full items-center justify-center lg:w-1/2'>
+        <div className="imageHolder relative aspect-video w-full">
+            <Image src="/demo.jpg" fill alt="Workshop" style={{ objectFit: "cover" }} />
+        </div>
+    </div>
+</section>
+
+
+            {/* Section 4 (reverse layout) */}
+            <section id="section-4" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse">
+    <div className='w-full lg:w-1/2 flex flex-col'>
+        <span className='text-3xl font-semibold block mb-4'>Collaborations</span>
+        <p className='text-justify text-xl'>
+        Unique collaborations with brands that resonate with our design aesthetic. Handcrafted products, designed to perfection through creative associations.
+        </p>
+        <p className='text-justify text-xl mt-6'>
+            Schedule a Meeting! See you soon..
+        </p>
+        <Link href="/contact" className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200">Get in Touch</Link>
+    </div>
+
+    <div className='flex w-full items-center justify-center lg:w-1/2'>
+        <div className="imageHolder relative aspect-video w-full">
+            <Image src="/demo.jpg" fill alt="Recycle Program" style={{ objectFit: "cover" }} />
+        </div>
+    </div>
+</section>
+
+
+            {/* Section 5 (same layout as Section 1) */}
+            <section id="section-5" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row">
     <div className='w-full lg:w-1/2 flex flex-col'>
         <span className='text-3xl font-semibold block mb-4'>Fundraising - Charitable Donation</span>
         <p className='text-justify text-xl'>
@@ -124,8 +177,8 @@ const ServicesPage: React.FC = () => {
 </section>
 
 
-            {/* Section 4 (reverse layout) */}
-            <section id="section-4" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse">
+            {/* Section 6 (reverse layout) */}
+            <section id="section-6" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse">
     <div className='w-full lg:w-1/2 flex flex-col'>
         <span className='text-3xl font-semibold block mb-4'>Wholesale - Private Label</span>
         <p className='text-justify text-xl'>
@@ -145,8 +198,8 @@ const ServicesPage: React.FC = () => {
 </section>
 
 
-            {/* Section 5 (same layout as Section 1) */}
-            <section id="section-5" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row">
+            {/* Section 7 (same layout as Section 1) */}
+            <section id="section-7" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row">
     <div className='w-full lg:w-1/2 flex flex-col'>
         <span className='text-3xl font-semibold block mb-4'>Donations</span>
         <p className='text-justify text-xl'>

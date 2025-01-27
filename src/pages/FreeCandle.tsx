@@ -4,6 +4,7 @@ import HeaderBox from '@/components/HeaderBox';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Heart from '@/components/Heart';
 
 const FreeCandle: React.FC = () => {
     const handleScroll = (sectionId: string) => {
@@ -43,6 +44,9 @@ const FreeCandle: React.FC = () => {
                     </div>
                 </div>
             </section>
+            <div className="flex justify-center my-4">
+                <Heart />
+            </div>
         </div>
     );
 };

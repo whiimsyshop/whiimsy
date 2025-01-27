@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 
+// --HomepageContent--
 const gridData = [
     {
         "title": "Handcrafted with Love",

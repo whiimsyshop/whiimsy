@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeaderBox from '@/components/HeaderBox';
 import GivewayEvent from "../components/GivewayEvent";
+import Heart from '@/components/Heart';
 
 const Giveway: React.FC = () => {
     return (
@@ -22,6 +23,9 @@ const Giveway: React.FC = () => {
                         
                 </div>
                 <GivewayEvent />
+                <div className="flex justify-center my-4"> {/* New container for centering */}
+                <Heart />
+                </div>
         </main>
     );
 }
