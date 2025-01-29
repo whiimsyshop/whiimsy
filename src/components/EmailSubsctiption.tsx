@@ -1,16 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email.trim() && validateEmail(email)) {
       setSuccess(true);
       setEmail("");
+      setName("");
       // Handle email subscription logic here (e.g., API call)
       console.log("Subscribed with email:", email);
     } else {
@@ -18,7 +19,7 @@ const EmailSubscription = () => {
     }
   };
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
@@ -36,7 +37,8 @@ const EmailSubscription = () => {
               Name
             </label>
             <input
-              type="name"
+              id="name"
+              type="text"
               style={{ marginTop: "-1rem" }}
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -48,6 +50,7 @@ const EmailSubscription = () => {
               Email
             </label>
             <input
+              id="email"
               type="email"
               style={{ marginTop: "-1rem" }}
               value={email}
