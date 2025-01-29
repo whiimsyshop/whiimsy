@@ -56,7 +56,7 @@ const NextUiNavbar: React.FC<NavbarProps> = ({ navdata }) => {
   const currentPath = pathname?.split("/")[1] || "home";
 
   const icons = {
-    chevron: <ChevronDown fill="currentColor" size={16} />,
+    chevron: <ChevronDown fill="currentColor" size={16} height={16} width={16} />,
   };
 
   const renderNavItems = (items: NavItem[]) =>
