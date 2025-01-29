@@ -138,7 +138,7 @@ const ServicesPage: React.FC = () => {
             {/* Section 4 (reverse layout) */}
             <section id="section-4" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse">
     <div className='w-full lg:w-1/2 flex flex-col'>
-        <span className='text-3xl font-semibold block mb-4'>Collaborations</span>
+        <span className='text-3xl font-semibold block mb-4'>Collaborations blah</span>
         <p className='text-justify text-xl'>
         Unique collaborations with brands that resonate with our design aesthetic. Handcrafted products, designed to perfection through creative associations.
         </p>
