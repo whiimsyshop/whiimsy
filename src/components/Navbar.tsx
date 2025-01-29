@@ -93,7 +93,7 @@ const NavbarComp = () => {
         },
     {
       mainHeading: "SHOP NOW",
-      link: "https://whiimsy.mini.site",
+      link: "/shop",
         },
   ];
 

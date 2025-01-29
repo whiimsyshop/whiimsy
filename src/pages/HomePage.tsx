@@ -18,7 +18,7 @@ const HomePage = () => {
                 alt="Candle Image"
                 id="candle-image"
               />
-              <a href="https://whiimsy.mini.site" target="_blank">
+              <a href="/shop" target="_blank">
                 Shop Now
               </a>
             </div>

@@ -3,10 +3,16 @@
 import React, { useState } from "react";
 
 const ContactForm = () => {
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const [result, setResult] = useState<string>(""); // State to store the result message
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.target as HTMLFormElement;
+
+    // Hardcoded API key
+    const accessKey = "9f8d0cb0-d575-4be7-982c-d52773b524af"; // Replace with your API key
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -14,36 +20,29 @@ const ContactForm = () => {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        access_key: `${process.env.NEXT_PUBLIC_ACCESS_KEY}`,
-        // access_key: "d4bfeb97-c408-403e-9eea-68b728d06cf5",
-        name: (e.currentTarget.elements.namedItem("name") as HTMLInputElement)
-          .value,
-        email: (e.currentTarget.elements.namedItem("email") as HTMLInputElement)
-          .value,
-        message: (
-          e.currentTarget.elements.namedItem("message") as HTMLTextAreaElement
-        ).value,
-        subject: (
-          e.currentTarget.elements.namedItem("subject") as HTMLInputElement
-        ).value,
+        access_key: accessKey,
+        name: (e.currentTarget.elements.namedItem("name") as HTMLInputElement).value,
+        email: (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value,
+        message: (e.currentTarget.elements.namedItem("message") as HTMLTextAreaElement).value,
+        subject: (e.currentTarget.elements.namedItem("subject") as HTMLInputElement).value,
       }),
     });
-    const result = await response.json();
-    if (result.success) {
-      form.reset();
+
+    const resultData = await response.json();
+
+    if (resultData.success) {
+      setResult("Thank You, Your form has been successfully submitted.");
+      form.reset(); // Reset the form after successful submission
+    } else {
+      setResult("Error submitting form. Please try again.");
     }
-  }
+  };
 
   return (
     <section>
-      {/* <h2 className="mb-6 font-bold text-3xl">Contact</h2> */}
       <div className="block">
         <div className="ContactForm">
-          <form
-            id="contact-form"
-            className="jsx-882709793"
-            onSubmit={handleSubmit}
-          >
+          <form id="contact-form" onSubmit={handleSubmit}>
             <div className="mb-5 form-input">
               <label className="mb-2 text-sm">Your name</label>
               <input
@@ -87,6 +86,13 @@ const ContactForm = () => {
               Send Message
             </button>
           </form>
+
+          {/* Display the result message */}
+          {result && (
+            <div className="mt-4 text-lg font-semibold text-green-600">
+              {result}
+            </div>
+          )}
         </div>
       </div>
     </section>
