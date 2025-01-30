@@ -13,6 +13,15 @@ const ContactForm = () => {
     // Hardcoded API key
     const accessKey = "9f8d0cb0-d575-4be7-982c-d52773b524af"; // Replace with your API key
 
+    // Get the input values
+    const name = (e.currentTarget.elements.namedItem("name") as HTMLInputElement).value;
+    const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
+    const message = (e.currentTarget.elements.namedItem("message") as HTMLTextAreaElement).value;
+    const subjectInput = (e.currentTarget.elements.namedItem("subject") as HTMLInputElement).value;
+
+    // Concatenate the static text with the input subject
+    const subject = `New Contact Form Submitted + ${subjectInput}`;
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -21,10 +30,10 @@ const ContactForm = () => {
       },
       body: JSON.stringify({
         access_key: accessKey,
-        name: (e.currentTarget.elements.namedItem("name") as HTMLInputElement).value,
-        email: (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value,
-        message: (e.currentTarget.elements.namedItem("message") as HTMLTextAreaElement).value,
-        subject: (e.currentTarget.elements.namedItem("subject") as HTMLInputElement).value,
+        name,
+        email,
+        message,
+        subject, // Concatenated subject
       }),
     });
 
