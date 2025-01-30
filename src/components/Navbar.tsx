@@ -101,7 +101,11 @@ const NavbarComp = () => {
     return <div>Loading...</div>;
   }
 
-  return <NextUiNavbar navdata={navdata} />;
+  return (
+    <div style={{ backgroundColor: "#4ABDAC" }}> {/* Apply the color inline */}
+      <NextUiNavbar navdata={navdata} />
+    </div>
+  );
 };
 
 export default NavbarComp;

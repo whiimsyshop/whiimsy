@@ -66,7 +66,7 @@ const Footer = () => {
               About Us
             </Link>
             <Link
-              href="/freecandle"
+              href="/free-candle"
               className="text-base tablet:text-sm mb-4 tablet:mb-2 hover:text-blue-700"
             >
               Free Candle

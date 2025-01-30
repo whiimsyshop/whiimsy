@@ -2,7 +2,7 @@ import Services from "../../pages/Services";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Whiimsy",
+  title: "Services - Whiimsy",
   description: 'Blah',
   keywords: 'Candle',
   authors: [{ name: 'Whiimsy' }],

@@ -4,6 +4,7 @@ import HeaderBox from '@/components/HeaderBox';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Banner from '@/components/Banner';
 import Heart from '@/components/Heart';
 
 const FreeCandle: React.FC = () => {
@@ -24,6 +25,7 @@ const FreeCandle: React.FC = () => {
 
     return (
         <div>
+            <Banner />
             <HeaderBox title="Free Candle" />
             {/* Section 1 (layout) */}
             <section id="section-1" className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row">
@@ -35,7 +37,7 @@ const FreeCandle: React.FC = () => {
                     <p className='text-justify text-xl mt-6'>
                         The winner is announced every first day of the month via Instagram. Make sure to follow us <a href="https://www.instagram.com/whiimsy.in">@whiimsy.in</a>.
                     </p>
-                    <Link href="/contact" className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200">Get in Touch</Link>
+                    <Link href="https://forms.gle/vC9U1vqsBacgopae9" className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200">Register Today</Link>
                 </div>
 
                 <div className='flex w-full items-center justify-center lg:w-1/2'>
