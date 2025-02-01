@@ -19,7 +19,7 @@ nav header {
 }
 
 nav > header > ul {
-  @apply w-full justify-between;
+  @apply w-full;
 }
 
 .nested-ul {
@@ -28,7 +28,7 @@ nav > header > ul {
 /* -------------------------- Home Page -------------------------- */
 
 .image-container {
-  width: 106%; /* Set the desired width */
+  width: 100%; /* Set the desired width */
   height: 40rem; /* Set the desired height */
   overflow: hidden; /* Crop overflow */
   display: flex;
@@ -46,7 +46,7 @@ nav > header > ul {
 .image-container a {
   position: absolute; /* Absolute position relative to the container */
   bottom: 5rem; /* Position from the bottom */
-  right: 46rem; /* Position from the right */
+  right: 40rem; /* Position from the right */
   padding: 15px 40px;
   background-color: #e8d6c5;
   color: #5c4033;

@@ -1,111 +1,76 @@
-"use client";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
-import React, { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-
-const NextUiNavbar = dynamic(() => import("./NextUInav"), {
-  ssr: false,
-});
-
-interface SubnavItem {
-  name: string;
+// Interface for navigation item structure
+interface NavItem {
+  mainHeading: string;
   link: string;
 }
 
-interface NavItem {
-  mainHeading: string;
-  subnav?: SubnavItem[];
-  link?: string;
-}
+// Navigation data with items
+const navdata: NavItem[] = [
+  { mainHeading: "About", link: "/about" },
+  { mainHeading: "Free Candle", link: "/free-candle" },
+  { mainHeading: "Services", link: "/services" },
+  { mainHeading: "Giveway", link: "/giveway" },
+  { mainHeading: "Contact", link: "/contact-us" },
+  { mainHeading: "SHOP NOW", link: "/shop" },
+];
 
-const fetchNames = async () => {
-  try {
-    const reqOptions = {
-      headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
-      },
-      cache: "no-store" as RequestCache,
-    };
-    const request = await fetch(
-      `${process.env.NEXT_PUBLIC_HOST}/api/reviews?fields[0]=vpn_name&fields[1]=slug&fields[2]=ratting`,
-      reqOptions
-    );
-    const response = await request.json();
-    if (!response.data) throw new Error("No data found");
-    const sortedBlogs = response.data.sort((a: any, b: any) => b.attributes.ratting - a.attributes.ratting);
-    return sortedBlogs;
-  } catch (error) {
-    console.error("Error fetching reviews:", error);
-    return [];
-  }
-};
-
-const buildSubnavFromApi = async () => {
-  const apiData = await fetchNames();
-  const subnavFromApi = apiData
-    .map((item: { attributes: { vpn_name: string; slug: string } }) => ({
-      name: item.attributes.vpn_name,
-      link: `/reviews/${item.attributes.slug}`,
-    }))
-    .slice(0, 5);
-  return subnavFromApi;
-};
-
-const NavbarComp = () => {
-  const [rev, setRev] = useState<SubnavItem[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    const fetchAndSetData = async () => {
-      try {
-        const subnav = await buildSubnavFromApi();
-        setRev(subnav);
-      } catch (error) {
-        console.error("Failed to fetch subnav data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchAndSetData();
-  }, []);
-
-  const navdata: NavItem[] = [
-    {
-      mainHeading: "About",
-          link: "/about",
-    },
-    {
-      mainHeading: "Free Candle",
-          link: "/free-candle",
-    },
-    {
-      mainHeading: "Services",
-          link: "/services",
-        },
-    {
-      mainHeading: "Giveway",
-      link: "/giveway",
-        },
-    {
-      mainHeading: "Contact",
-      link: "/contact-us",
-        },
-    {
-      mainHeading: "SHOP NOW",
-      link: "/shop",
-        },
-  ];
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
+const Navbar = () => {
   return (
-    <div style={{ backgroundColor: "#4ABDAC" }}> {/* Apply the color inline */}
-      <NextUiNavbar navdata={navdata} />
-    </div>
+    <nav
+      style={{ backgroundColor: "#4ABDAC" }} // Inline background color
+      className="sticky top-0 z-50 w-full shadow-md" // Added sticky positioning and z-index for layering
+    >
+      {/* Navbar Header */}
+      <header className="justify-between gap-10 max-w-full flex w-full items-center justify-center h-auto">
+        {/* Navbar Brand with Logo and Name */}
+        <Link href="/" className="text-inherit">
+          <div className="flex items-center gap-2" style={{ paddingLeft: "15rem", paddingTop: ".7rem" }}>
+            <Image src="/logo.jpg" alt="logo" height={30} width={30} />
+            <p className="font-bold text-inherit">Whiimsy</p>
+          </div>
+        </Link>
+
+        {/* Navigation Links List */}
+        <ul
+          className="h-full flex-row flex-nowrap items-center hidden laptop:flex gap-3 w-full"
+          style={{ paddingLeft: "25rem", paddingTop: ".7rem" }} // Adds left padding to the nav links
+        >
+          {navdata.map((item, index) => {
+            // Check for SHOP NOW item to apply a different style
+            if (item.mainHeading !== "SHOP NOW") {
+              return (
+                <li key={index}>
+                  <a
+                    href={item.link}
+                    className="text-gray-800 hover:text-gray-600"
+                    style={{ paddingRight: "1rem" }} // Spacing between the items
+                  >
+                    {item.mainHeading}
+                  </a>
+                </li>
+              );
+            }
+            // Special style for SHOP NOW button
+            return (
+              <li key={index}>
+                <a
+                  href={item.link}
+                  className="shop-now-button"
+                  style={{ backgroundColor: "rgb(232, 214, 197)" }} // Shop now button background
+                >
+                  {item.mainHeading}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </header>
+    </nav>
   );
 };
 
-export default NavbarComp;
+export default Navbar;
