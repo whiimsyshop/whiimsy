@@ -275,7 +275,7 @@ const ServicesPage: React.FC = () => {
           Take your business to the next level. Let's show you how.
         </span>
         <Link
-          href="/contact"
+          href="/contact-us"
           className="h-fit w-fit rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
         >
           Contact Us

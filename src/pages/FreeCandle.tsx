@@ -38,19 +38,23 @@ const FreeCandle: React.FC = () => {
           </p>
           <p className="text-justify text-xl mt-6">
             The winner is announced every first day of the month via Instagram. Make sure to follow us{" "}
-            <a href="https://www.instagram.com/whiimsy.in">@whiimsy.in</a>.
+            <a href="https://www.instagram.com/whiimsy.in" target="_blank" rel="noopener noreferrer">
+              @whiimsy.in
+            </a>.
           </p>
-          <Link
-            href="https://forms.gle/vC9U1vqsBacgopae9"
-            className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
-          >
-            Register Today
-          </Link>
+          <div className="flex justify-center mt-6">
+            <Link
+              href="https://forms.gle/vC9U1vqsBacgopae9"
+              className="rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
+            >
+              Register Today
+            </Link>
+          </div>
         </div>
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Workshop" style={{ objectFit: "cover" }} />
+            <Image src="/demo.jpg" fill alt="Workshop" style={{ objectFit: "cover", objectPosition: "center" }} />
           </div>
         </div>
       </section>
