@@ -1,16 +1,16 @@
-import GivewayPage from "../../pages/Giveway";
+import GiveawayPage from "../../pages/Giveway";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Giveway - Whiimsy",
+  title: "Giveaway - Whiimsy",
   description: 'Blah',
   keywords: 'Candle',
   authors: [{ name: 'Whiimsy' }],
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
 };
-const givewayPage = () => {
-  return <GivewayPage />;
+const giveawayPage = () => {
+  return <GiveawayPage />;
 };
 
-export default givewayPage;
+export default giveawayPage;

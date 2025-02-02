@@ -1,6 +1,6 @@
 import Script from "next/script"
 
-export default function givewayPageLayout({
+export default function giveawayPageLayout({
   children,
 }: {
   children: React.ReactNode
@@ -8,7 +8,7 @@ export default function givewayPageLayout({
   return (
     <>
     {/* canonical tag */}
-    <link rel="canonical" href="https://whiimsy.in/giveway" />
+    <link rel="canonical" href="https://whiimsy.in/giveaway" />
       <section>
         {children}
       </section>

@@ -9,7 +9,7 @@ const navdata = [
   { mainHeading: "About", link: "/about" },
   { mainHeading: "Free Candle", link: "/free-candle" },
   { mainHeading: "Services", link: "/services" },
-  { mainHeading: "Giveaway", link: "/giveway" },
+  { mainHeading: "Giveaway", link: "/giveaway" },
   { mainHeading: "Contact", link: "/contact-us" },
   { mainHeading: "SHOP NOW", link: "/shop" },
 ];

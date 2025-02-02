@@ -6,7 +6,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col pt-10 max-w-full border-t border-gray-300 bg-[#4ABDAC] text-white">
+    <footer className="flex flex-col pt-10 lg:pl-[7rem] lg:pr-[1.5rem] max-w-full border-t border-gray-300 bg-[#4ABDAC] text-white">
       {/* Top Section */}
       <div className="flex flex-col tablet:flex-row px-6 tablet:px-10 4k:mx-[200px] text-center tablet:text-left">
         {/* Left Section */}
@@ -46,12 +46,12 @@ const Footer = () => {
           <Link href="/about" className="text-sm block mb-2 hover:text-gray-300">About Us</Link>
           <Link href="/free-candle" className="text-sm block mb-2 hover:text-gray-300">Free Candle</Link>
           <Link href="/services" className="text-sm block mb-2 hover:text-gray-300">Services</Link>
-          <Link href="/giveway" className="text-sm block mb-2 hover:text-gray-300">Giveaway</Link>
+          <Link href="/giveaway" className="text-sm block mb-2 hover:text-gray-300">Giveaway</Link>
         </div>
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col tablet:flex-row justify-center items-center text-sm mt-6 border-t border-gray-400 py-4 px-6 tablet:px-10 4k:mx-[200px] text-center">
+      <div className="flex flex-col tablet:flex-row justify-center items-center text-sm mt-6 py-4 px-6 tablet:px-10 4k:mx-[200px] text-center">
         <div className="flex flex-wrap justify-center gap-3">
           <Link href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link>
           <Link href="/cookies" className="hover:text-gray-300">Cookie Policy</Link>
