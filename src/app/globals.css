@@ -8,23 +8,34 @@ html {
   scroll-behavior: smooth;
 }
 
+
 /* -------------------------- NAVBAR -------------------------- */
 
-nav {
-  @apply justify-start h-[55px] shadow-md;
+/* Remove unwanted extra spacing from sidebar */
+.mobile-menu {
+  @apply fixed top-0 right-0 bg-[#4ABDAC] w-[60%] max-w-[280px] shadow-lg transform transition-transform duration-300;
 }
 
-nav header {
-  @apply justify-between gap-10 max-w-full;
+/* Ensure sidebar height only fits content */
+.mobile-menu {
+  height: auto;
+  min-height: 40vh;
+  max-height: 80vh;
+  @apply rounded-bl-xl;
 }
 
-nav > header > ul {
-  @apply w-full;
+/* Mobile Links */
+.mobile-menu a {
+  @apply block text-left py-2 pl-3 text-white text-base hover:text-gray-300 transition-all;
 }
 
-.nested-ul {
-  @apply laptop:justify-center gap-10;
+/* Remove extra padding/margin */
+.mobile-menu nav {
+  @apply flex flex-col gap-3;
 }
+
+
+
 /* -------------------------- Home Page -------------------------- */
 
 .image-container {
