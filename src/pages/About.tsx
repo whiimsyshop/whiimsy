@@ -20,20 +20,17 @@ const About: React.FC = () => {
                             layout="fill" // Use `layout` instead of `fill` for Next.js Image component
                             className="mt-4 tablet:mt-6 laptop:mt-8"
                         />
-            </div>
-                <div className="flex flex-col justify-center items-center" style={{ paddingLeft: '10rem', paddingRight: '10rem' }}>
-                <p className="text-left text-lg mb-4 text-grey font-medium">
-                    <strong>Each Whiimsy candle is a labour of love - an extension of our slow-living philosophy 
-                    and thoughtfully designed to help you drift off to a happy space..</strong>
-                    </p>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                    At Whiimsy, we believe that a great candle is more than just a source of light; it's an experience, a memory, a mood. Founded with a passion for crafting premium scented candles, our journey began with a simple vision: to create luxurious, handcrafted candles that not only illuminate spaces but also uplift spirits.
-                    </p>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                    Inspired by the enchanting power of scents and the art of candle making, We started Whiimsy to bring a touch of warmth and elegance to every home. What began as a small project in our cozy studio has blossomed into a beloved brand, cherished by candle enthusiasts around the world. Every candle we create is a testament to our commitment to quality, creativity, and sustainability.
-
-Read More
-                    </p>  
+                </div>
+                <div className="flex flex-col justify-center items-center px-6 sm:px-12 md:px-20 lg:px-40 text-gray-700">
+                  <p className="text-left text-base sm:text-lg md:text-xl mb-4 font-medium">
+                   <strong>Each Whiimsy candle is a labor of love—an extension of our slow-living philosophy, thoughtfully designed to help you drift off to a happy space.</strong>
+                  </p>
+                  <p className="text-left text-base sm:text-lg md:text-xl mb-4 font-medium">
+                   At Whiimsy, we believe a great candle is more than just a source of light—it's an experience, a memory, a mood. Our passion for premium scented candles drives us to craft luxurious, handcrafted pieces that illuminate spaces and uplift spirits.
+                  </p>
+                  <p className="text-left text-base sm:text-lg md:text-xl mb-4 font-medium">
+                  Inspired by the enchanting power of scents and the art of candle-making, Whiimsy was born to bring warmth and elegance into every home. What began as a small project has grown into a beloved brand, cherished by candle enthusiasts worldwide.
+                  </p>
                 </div>
             </div>
             {/* -------------------------- About Us End -------------------------- */}
@@ -52,33 +49,26 @@ Read More
                             className="mt-4 tablet:mt-6 laptop:mt-8"
                         />
                 </div>
-                <div className="flex flex-col justify-center items-center" style={{ paddingLeft: '10rem', paddingRight: '10rem' }}>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                    Established in 2014 and proudly still based in Melbourne, Australia, Candle Monster is a boutique studio that makes extra-large soy candles. All of our products are hand-made with care, precision and love, and we're quite proud of that. Everything we create is done with your moment using it in mind.
+                <div className="flex flex-col justify-center items-center px-4 sm:px-10 md:px-20 lg:px-40">
+                    <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                       Founded with a passion for aesthetic home décor, Whiimsy creates handcrafted candles that blend artistry with functionality. Each piece is made with care, ensuring a luxurious burn and captivating fragrance to elevate your space.
                     </p>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                    We take pride in the artistry of candle making. Our candles are hand-poured with precision and care, ensuring a consistent burn and a rich, lasting aroma. The decorative designs of our candles are inspired by the beauty of nature and the elegance of timeless decor, making them perfect for any setting – whether it's a tranquil home sanctuary or a vibrant celebration.
+                    <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                       Inspired by Pinterest-worthy designs, our candles are more than just home fragrances—they’re statement pieces, adding warmth and personality to every corner of your home.
                     </p>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                    At Whiimsy, we are committed to sustainability and ethical practices. We source our materials responsibly and strive to minimize our environmental impact. Our packaging is designed to be eco-friendly, and we continuously seek ways to innovate and improve our processes.
+                    <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                       Sustainability is at our core. We source eco-friendly materials, use minimal packaging, and continuously innovate to reduce our footprint. Every candle is cruelty-free and made with responsibly sourced ingredients.
                     </p>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                    We believe in the power of community and giving back. For every 10 items sold, we make a donation to a charity close to our hearts. This initiative is our way of sharing the light and spreading joy beyond our candles, making a positive impact on the lives of those in need.
+                    <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                       Community matters. For every 10 products sold, we donate to a charity that aligns with our values, spreading light beyond our candles.
                     </p>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                    We invite you to explore our collection and find the perfect candles to brighten your moments. Whether you are a long-time candle lover or new to the world of scented candles, we are here to guide you and share our passion. Follow us on social media for the latest updates, exclusive offers, and a glimpse into our candle-making journey.
+                    <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                      <strong>Explore our collection and let Whiimsy brighten your world—one candle at a time.</strong>
                     </p>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                        Our goal is high quality, even higher curation, and to try to offer something more considered than others. We believe in sustainability, small footprints, cruelty free, plant based, doing things properly and the general good in people. Every candle sold has in a Rs.50 charity donation.
-                    </p>
-                    <p className="text-left text-lg mb-4 text-grey font-medium">
-                    <strong>Thank you for choosing Whiimsy. Let's light up the world together, one candle at a time.</strong>
-                    </p>
-                    
                 </div>
             </div>
             {/* -------------------------- About Our Product End -------------------------- */}
-            <div className="flex justify-center my-4"> {/* New container for centering */}
+                <div className="flex justify-center my-4"> {/* New container for centering */}
                 <Heart />
                 </div>
         </main>

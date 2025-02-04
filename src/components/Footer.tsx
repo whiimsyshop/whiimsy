@@ -12,7 +12,7 @@ const Footer = () => {
         {/* Left Section */}
         <div className="order-1 mb-8 tablet:mb-0 tablet:w-[50%]">
           <div className="flex justify-center tablet:justify-start items-center gap-2 text-2xl">
-            <Image src="/logo.jpg" alt="Whiimsy Logo" height={50} width={50} />
+            <Image src="/logo2.jpg" alt="Whiimsy Logo" height={50} width={50} />
             <p className="font-bold text-inherit">WHIIMSY</p>
           </div>
           <p className="pt-4 text-lg tablet:w-[80%]">

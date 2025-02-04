@@ -10,60 +10,54 @@ const GivewayEvent = () => {
             title: "Giveaway 1",
             content: [
                 "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024",
-                "Winner:"
+                "End Date: 25 Jan 2024"
             ],
-            imageurl: "/giveway/giveway1.png",
-            link: "https://www.instagram.com/"
+            imageurl: "/giveaway/giveaway1.png",
+            link: "https://www.instagram.com/whiimsy.in/p/DFCvjZCz4TX/"
         },
         {
             title: "Giveaway 2",
             content: [
                 "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024",
-                "Winner:"
+                "End Date: 25 Jan 2024"
             ],
-            imageurl: "/home/user.png",
+            imageurl: "/giveaway/giveaway.jpg",
             link: "/"
         },
         {
             title: "Giveaway 3",
             content: [
                 "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024",
-                "Winner:"
+                "End Date: 25 Jan 2024"
             ],
-            imageurl: "/home/user.png",
+            imageurl: "/giveaway/giveaway.jpg",
             link: "/"
         },
         {
             title: "Giveaway 4",
             content: [
                 "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024",
-                "Winner:"
+                "End Date: 25 Jan 2024"
             ],
-            imageurl: "/home/user.png",
+            imageurl: "/giveaway/giveaway.jpg",
             link: "/"
         },
         {
             title: "Giveaway 5",
             content: [
                 "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024",
-                "Winner:"
+                "End Date: 25 Jan 2024"
             ],
-            imageurl: "/home/user.png",
+            imageurl: "/giveaway/giveaway.jpg",
             link: "/"
         },
         {
             title: "Giveaway 6",
             content: [
                 "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024",
-                "Winner:"
+                "End Date: 25 Jan 2024"
             ],
-            imageurl: "/home/user.png",
+            imageurl: "/giveaway/giveaway.jpg",
             link: "/"
         },
     ];

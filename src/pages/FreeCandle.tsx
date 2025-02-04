@@ -42,14 +42,25 @@ const FreeCandle: React.FC = () => {
               @whiimsy.in
             </a>.
           </p>
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-6 space-x-4">
             <Link
               href="https://forms.gle/vC9U1vqsBacgopae9"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
             >
               Register Today
             </Link>
+            <Link
+              href="https://www.instagram.com/whiimsy.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
+            >
+              Follow Us
+            </Link>
           </div>
+  
         </div>
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
