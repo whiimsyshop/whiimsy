@@ -34,7 +34,7 @@ const FreeCandle: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold mb-4">Everyone deserves a gift!</span>
           <p className="text-justify text-xl">
-            Be the LUCKY WINNER of the monthly candle giveaway. The aroma delivered right to your doorstep.
+            Be the LUCKY WINNER of the monthly candle giveaway. The Candle delivered right to your doorstep.
           </p>
           <p className="text-justify text-xl mt-6">
             The winner is announced every first day of the month via Instagram. Make sure to follow us{" "}

@@ -268,12 +268,31 @@ const CookiesPolicy = () => {
                 Network Advertising Initiative Consumer Opt-Out
               </Link>
               <br />
-              <br />
-              <span>
+            </div>
+          </div>
+
+          <div className="px-3 pt-6">
+            <h2 className="text-left font-bold text-2xl mb-5">
+              How to Contact Us
+            </h2>
+            <p className="text-justify text-lg mb-4  font-medium">
+              whiimsy.in is owned and operated by whiimsy. If you have any
+              questions about our cookies or this policy, <p>
+              Please contact us at 
+              <a href="mailto:whiimsyteam@gmail.com" className="text-sm hover:text-gray-300">
+              <span className="pl-1">whiimsyteam@gmail.com</span>
+              </a>
+              and we will get back to you within two working days.
+            </p>
+
+            </p>
+            <p className="text-justify text-lg mb-4  font-medium">
+              Whiimsy<br></br>Kolkata<br></br>West Bengal<br></br>India
+            </p>
+            <span>
                 This policy was updated on:{" "}
                 <b className="font-bold">20 February 2025 </b>
               </span>
-            </div>
           </div>
         </div>
       </div>

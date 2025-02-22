@@ -9,8 +9,8 @@ const GivewayEvent = () => {
         {
             title: "Giveaway 1",
             content: [
-                "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024"
+                "Start Date: 20 Jan 2025",
+                "End Date: 25 Jan 2025"
             ],
             imageurl: "/giveaway/giveaway1.png",
             link: "https://www.instagram.com/whiimsy.in/p/DFCvjZCz4TX/"
@@ -18,8 +18,8 @@ const GivewayEvent = () => {
         {
             title: "Giveaway 2",
             content: [
-                "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024"
+                "Start Date: 07 Apr 2025",
+                "End Date: 12 Apr 2025"
             ],
             imageurl: "/giveaway/giveaway.jpg",
             link: "/"
@@ -27,8 +27,8 @@ const GivewayEvent = () => {
         {
             title: "Giveaway 3",
             content: [
-                "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024"
+                "Start Date: 09 Jun 2025",
+                "End Date:  Jun 2025"
             ],
             imageurl: "/giveaway/giveaway.jpg",
             link: "/"
@@ -36,8 +36,8 @@ const GivewayEvent = () => {
         {
             title: "Giveaway 4",
             content: [
-                "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024"
+                "Start Date: 04 Aug 2025",
+                "End Date: 09 Aug 2025"
             ],
             imageurl: "/giveaway/giveaway.jpg",
             link: "/"
@@ -45,8 +45,8 @@ const GivewayEvent = () => {
         {
             title: "Giveaway 5",
             content: [
-                "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024"
+                "Start Date: 06 Oct 2025",
+                "End Date: 11 Oct 2025"
             ],
             imageurl: "/giveaway/giveaway.jpg",
             link: "/"
@@ -54,8 +54,8 @@ const GivewayEvent = () => {
         {
             title: "Giveaway 6",
             content: [
-                "Start Date: 20 Jan 2024",
-                "End Date: 25 Jan 2024"
+                "Start Date: 15 Dec 2025",
+                "End Date: 20 Dec 2025"
             ],
             imageurl: "/giveaway/giveaway.jpg",
             link: "/"

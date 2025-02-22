@@ -50,7 +50,7 @@ const Term_Condition = () => {
           By submitting an order on www.whiimsy.mini.site, you warrant and represent that all personal information you have entered for is valid.
           </p>
           <p>
-          Except with respect to our out of stock items, you cannot change or cancel an order once the order has been submitted. 
+          Except for out-of-stock items, once the order has been submitted, it cannot be changed or canceled. 
           </p>
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">Lack of Availability</h2>

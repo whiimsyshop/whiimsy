@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
           whiimsy.in is committed to respecting and protecting your privacy. 
           Should you choose to provide your email address or any other personal information on any of the forms found on our site, 
           you can be assured that it will only be used to support your relationship with whiimsy.in. 
-          This privacy policy is intended for all users of Candleberry.com, including vendors, customers and others. 
+          This privacy policy is intended for all users of whiimsy.in, including vendors, customers and others. 
           By visiting this web site you agree to be bound by the terms and conditions of this Privacy Policy. 
           If you do not agree please do not use or access our services.  
           We do collect certain personal information from you, depending on the relationship we have with you.
@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
             In this privacy policy, you will find information on these areas:
             <ol className="ml-7 mb-5 mt-3">
               <li className="mb-4">
-                1. What personally identifiable information Candleberry.com collects.
+                1. What personally identifiable information whiimsy.in collects.
               </li>
               <li className="mb-4">
                 2. What personally identifiable information third parties collect through the Web site

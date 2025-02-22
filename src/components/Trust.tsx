@@ -5,7 +5,7 @@ import Image from "next/image";
 const gridData = [
     {
         "title": "Handcrafted with Love",
-        "icon": "/home/campaign.png"
+        "icon": "/home/user.png"
     },
     {
         "title": "All Natural Ingredients",
@@ -13,19 +13,19 @@ const gridData = [
     },
     {
         "title": "Eco-Friendly Packaging",
-        "icon": "/home/multi.png"
-    },
-    {
-        "title": "Unique Scents",
         "icon": "/home/rti.png"
     },
     {
-        "title": "Custom Orders Available",
+        "title": "Unique Scents",
         "icon": "/home/target.png"
     },
     {
+        "title": "Custom Orders Available",
+        "icon": "/home/campaign.png"
+    },
+    {
         "title": "Sustainable Practices",
-        "icon": "/home/user.png"
+        "icon": "/home/multi.png"
     }
 ];
 

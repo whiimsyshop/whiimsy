@@ -141,7 +141,7 @@ const ServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold mb-4">Corporates</span>
           <p className="text-justify text-xl">
-            An opportunity to gift your customers and colleagues an exclusive scented product. Special attention is paid
+            An opportunity to gift your customers and colleagues an exclusive product. Special attention is paid
             to the client's design, philosophy, budget and requirements.
           </p>
           <p className="text-justify text-xl mt-6">Please click on the button below to find out more information.</p>
@@ -285,8 +285,8 @@ const ServicesPage: React.FC = () => {
       </section>
 
       <div className="flex flex-col items-center justify-between gap-5 rounded-t-xl border border-col5 bg-col5 px-5 py-5 md:px-16 lg:flex-row lg:gap-0 lg:px-32">
-        <span className="w-full text-2xl text-black md:text-3xl lg:w-10/12">
-          Take your business to the next level. Let's show you how.
+        <span className="w-full text-2xl text-black md:text-2xl lg:w-10/12">
+        For any suggestions or inquiries, please feel free to reach out. We value your feedback.
         </span>
         <Link
           href="/contact-us"
