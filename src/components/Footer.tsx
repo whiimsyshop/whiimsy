@@ -3,6 +3,8 @@ import Link from "next/link";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
+
 
 const Footer = () => {
   return (
@@ -28,14 +30,14 @@ const Footer = () => {
             <span className="pl-1">whiimsyteam@gmail.com</span>
           </Link>
           <div className="flex justify-center tablet:justify-start gap-3 mt-5">
-            <Link href="#" className="bg-black rounded-full p-2" aria-label="Twitter">
-              <FaXTwitter className="text-white" />
+            <Link href="www.instagram.com/whiimsy.in" className="bg-black rounded-full p-2" aria-label="Instagram">
+              <FaInstagram className="text-white" />
             </Link>
-            <Link href="#" className="bg-black rounded-full p-2" aria-label="LinkedIn">
-              <FaLinkedinIn className="text-white" />
+            <Link href="https://www.facebook.com/profile.php?id=61571833596666" className="bg-black rounded-full p-2" aria-label="Facebook">
+              <FaFacebookF className="text-white" />
             </Link>
-            <Link href="#" className="bg-black rounded-full p-2" aria-label="YouTube">
-              <FaYoutube className="text-white" />
+            <Link href="https://wa.me/+918981256860?text=Hey!%20Whiimsy%20Team." className="bg-black rounded-full p-2" aria-label="Whatsapp">
+              <FaWhatsapp className="text-white" />
             </Link>
           </div>
         </div>

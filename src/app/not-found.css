@@ -15,7 +15,7 @@
 html, body {
   height: 100%;
   overflow-x: hidden; /* Prevents horizontal scrolling */
-  overflow-y: auto; /* Enables vertical scrolling */
+  /* overflow-y: auto; Enables vertical scrolling */
 }
 
 body {
