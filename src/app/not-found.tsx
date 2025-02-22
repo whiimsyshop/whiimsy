@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import "./globals.css"; // Ensure styles are applied
+import "./not-found.css"; // Ensure styles are applied
 
 export default function NotFound() {
   return (
