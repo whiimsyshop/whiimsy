@@ -243,8 +243,8 @@ const PrivacyPolicy = () => {
               whiimsy.in is owned and operated by whiimsy. If you have any
               questions about our cookies or this policy, <p>
               Please contact us at 
-              <a href="mailto:whiimsyteam@gmail.com" class="text-sm hover:text-gray-300">
-               <span class="pl-1">whiimsyteam@gmail.com </span>
+              <a href="mailto:whiimsyteam@gmail.com" className="text-sm hover:text-gray-300">
+              <span className="pl-1">whiimsyteam@gmail.com</span>
               </a>
               and we will get back to you within two working days.
             </p>

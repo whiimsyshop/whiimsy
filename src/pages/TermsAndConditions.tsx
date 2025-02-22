@@ -151,9 +151,9 @@ const Term_Condition = () => {
           </p>
           <p>
             Email:
-               <a href="mailto:whiimsyteam@gmail.com" class="text-sm hover:text-gray-300">
-                <span class="pl-1">whiimsyteam@gmail.com</span>
-               </a>
+            <a href="mailto:whiimsyteam@gmail.com" className="text-sm hover:text-gray-300">
+            <span className="pl-1">whiimsyteam@gmail.com</span>
+            </a>
           </p>
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">OUR BRAND</h2>
