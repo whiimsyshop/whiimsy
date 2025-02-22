@@ -53,6 +53,7 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="flex flex-col tablet:flex-row justify-center items-center text-sm mt-6 py-4 px-6 tablet:px-10 4k:mx-[200px] text-center">
         <div className="flex flex-wrap justify-center gap-3">
+        <Link href="/return-and-shipping" className="hover:text-gray-300">Return/Shipping</Link>
           <Link href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link>
           <Link href="/cookies" className="hover:text-gray-300">Cookie Policy</Link>
           <Link href="/terms-and-conditions" className="hover:text-gray-300">Terms of Use</Link>

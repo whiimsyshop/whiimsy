@@ -9,46 +9,84 @@ const PrivacyPolicy = () => {
       <div className="px-3 pt-5 pb-10 tablet:flex tablet:justify-center tablet:items-center">
         <div className="tablet:w-2/3">
           <p className="text-left text-lg mb-4  font-medium">
-            Welcome to vpnguide’s Privacy Policy.
+            Welcome to whiimsy Privacy Policy.
           </p>
           <p className="text-left text-lg mb-4  font-medium">
-            Please read this Privacy Policy carefully. If you use vpnguide (“our
-            Site”), you will be regarded as having read and accepted this
-            Privacy Policy.
+          whiimsy.in is committed to respecting and protecting your privacy. 
+          Should you choose to provide your email address or any other personal information on any of the forms found on our site, 
+          you can be assured that it will only be used to support your relationship with whiimsy.in. 
+          This privacy policy is intended for all users of Candleberry.com, including vendors, customers and others. 
+          By visiting this web site you agree to be bound by the terms and conditions of this Privacy Policy. 
+          If you do not agree please do not use or access our services.  
+          We do collect certain personal information from you, depending on the relationship we have with you.
           </p>
           <div className="text-left text-lg mb-4  font-medium">
-            Our Privacy Policy explains:
+          If we do collect personal information, it will be based on the following:
             <ol className="ml-7 mb-5 mt-3">
               <li className="mb-4">
-                1. What information we collect and how we collect it
+                1. Contact Information - We collect your name, address and phone number
               </li>
-              <li className="mb-4">2. How we use that information</li>
               <li className="mb-4">
-                3. How to find out more about our policies
+                2. When making a purchase- we collect your name, address, phone number and credit card information.
+              </li>
+              <li className="mb-4">
+                3. We use your information for fulfilling your order and save your contact information to continue servicing only that order.
+              </li>
+              <li className="mb-4">
+                4. Your credit card information will not be saved after the transaction is completed.
               </li>
             </ol>
           </div>
           <p className="text-left text-lg mb-4  font-medium">
-            This is a very important policy page and we hope you will read it
-            carefully. If you don’t wish to be bound by what you read below, you
-            shouldn’t use our Site.
+          We may process your information with third party advertisers, and when required by law. 
+          Minors will need permission from an adult before we process any personal information from them.
           </p>
+          <p>
+          You may opt out or change how we use your information at any time. 
+          You may also request a copy of your personal information and how we use it, at any time.
+          </p>
+
           <div className="px-3 pt-6">
             <h2 className="text-left font-bold text-2xl mb-5">
-              Information We Collect
+            How we use your personal information
             </h2>
-            <p className="text-justify text-lg mb-4  font-medium">
-              We do not ask you or anyone else to give us any personal
-              information in order to use vpnguide. We do not collect or store
-              any Personally Identifiable Information (PII).
-            </p>
-            <p className="text-justify text-lg mb-4  font-medium">
-              We do collect anonymized information to provide a better service
-              to all our users – from improving our less popular pages to
-              tracking the commissions that allow the site to operate as a free
-              resource.
-            </p>
+            <div className="text-left text-lg mb-4  font-medium">
+            In this privacy policy, you will find information on these areas:
+            <ol className="ml-7 mb-5 mt-3">
+              <li className="mb-4">
+                1. What personally identifiable information Candleberry.com collects.
+              </li>
+              <li className="mb-4">
+                2. What personally identifiable information third parties collect through the Web site
+              </li>
+              <li className="mb-4">
+                3. What organization collects the information.
+              </li>
+              <li className="mb-4">
+                4. How whiimsy.in uses the information.
+              </li>
+              <li className="mb-4">
+                5. With whom whiimsy.in may share user information.
+              </li>
+              <li className="mb-4">
+                6. What choices are available to users regarding collection, use and distribution and deletion of the information.
+              </li>
+              <li className="mb-4">
+                7. What types of security procedures are in place to protect the loss, misuse or alteration of information under whiimsy.in control.
+              </li>
+              <li className="mb-4">
+                8. How users can correct any inaccuracies in the information.
+              </li>
+              <li className="mb-4">
+                9. The customer’s right to object to how their information was processed.
+              </li>
+              <li className="mb-4">
+                10. The customer’s right to complain to a regulator.
+              </li>
+            </ol>
           </div>
+        </div>
+
           <div className="px-3 pt-6">
             <h2 className="text-left font-bold text-2xl mb-5">Browser Data</h2>
             <p className="text-justify text-lg mb-4  font-medium">
@@ -103,12 +141,23 @@ const PrivacyPolicy = () => {
               </li>
             </ul>
           </div>
+
+          <div className="px-3 pt-6">
+            <h2 className="text-left font-bold text-2xl mb-5">
+            Third Party Intermediaries 
+            </h2>
+            <p className="text-justify text-lg mb-4  font-medium">
+            We may use an outside shipping company to ship orders, and a credit card processing company to bill users for goods and services. 
+            To the best of our knowledge, these companies do not retain, share, store or use personally identifiable information for any secondary purposes.
+            </p>
+          </div>
+
           <div className="px-3 pt-6">
             <h2 className="text-left font-bold text-2xl mb-5">
               Cookies and similar technologies
             </h2>
             <p className="text-justify text-lg mb-4  font-medium">
-              Like most websites, vpnguide puts small files (known as ‘cookies’)
+              Like most websites, whiimsy puts small files (known as ‘cookies’)
               onto your computer to collect information about how you browse our
               Site.
             </p>
@@ -152,12 +201,13 @@ const PrivacyPolicy = () => {
               use, and disclosure policies.
             </p>
           </div>
+
           <div className="px-3 pt-6">
             <h2 className="text-left font-bold text-2xl mb-5">
               Links to Other Websites
             </h2>
             <p className="text-justify text-lg mb-4  font-medium">
-              vpnguide contains links to other websites.
+              whiimsy contains links to other websites.
             </p>
             <p className="text-justify text-lg mb-4  font-medium">
               This privacy policy only applies to this website, and doesn’t
@@ -166,6 +216,7 @@ const PrivacyPolicy = () => {
               with your information.
             </p>
           </div>
+
           <div className="px-3 pt-6">
             <h2 className="text-left font-bold text-2xl mb-5">Changes</h2>
             <p className="text-justify text-lg mb-4  font-medium">
@@ -183,22 +234,29 @@ const PrivacyPolicy = () => {
               Changes will become effective as soon as they are posted.
             </p>
           </div>
+
           <div className="px-3 pt-6">
             <h2 className="text-left font-bold text-2xl mb-5">
               How to Contact Us
             </h2>
             <p className="text-justify text-lg mb-4  font-medium">
-              vpnguide.com is owned and operated by PrivacyCo. If you have any
-              questions about our cookies or this policy, please contact us at{" "}
-              <Link href="#" className="text-bluelink hover:underline">
-                hello@vpnguide.com
-              </Link>{" "}
+              whiimsy.in is owned and operated by whiimsy. If you have any
+              questions about our cookies or this policy, <p>
+              Please contact us at 
+              <a href="mailto:whiimsyteam@gmail.com" class="text-sm hover:text-gray-300">
+               <span class="pl-1">whiimsyteam@gmail.com </span>
+              </a>
               and we will get back to you within two working days.
             </p>
-            <p className="text-justify text-lg mb-4  font-medium">
-              Velocity Click<br></br>Kolkata<br></br>West Bengal<br></br>India
+
             </p>
-            <p className="text-justify text-lg mb-4  font-medium">This policy was updated on: 6 Feb 2024</p>
+            <p className="text-justify text-lg mb-4  font-medium">
+              Whiimsy<br></br>Kolkata<br></br>West Bengal<br></br>India
+            </p>
+            <span>
+                This policy was updated on:{" "}
+                <b className="font-bold">20 February 2025 </b>
+              </span>
           </div>
         </div>
       </div>

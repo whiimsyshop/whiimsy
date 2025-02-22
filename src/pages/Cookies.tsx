@@ -90,10 +90,10 @@ const CookiesPolicy = () => {
           <p className="text-justify text-lg mb-4  font-medium">
             Welcome to{" "}
             <Link
-              href="https://vpns.guide/"
+              href="https://whiimsy.in/"
               className="text-bluelink font-semibold hover:underline"
             >
-              www.vpnguide.in
+              www.whiimsy.in
             </Link>{" "}
             (the “Website”). This Cookie Policy is designed to provide You with
             information about how We use cookies on our Website. By continuing
@@ -218,33 +218,7 @@ const CookiesPolicy = () => {
               />
             </div>
           </div>
-          <div className="px-3 pt-6">
-            <h2 className="text-left font-bold text-xl mb-5">
-              Affiliate Links
-            </h2>
-            <p className="text-justify text-lg mb-4  font-medium">
-              When you visit a VPN provider’s website via our Website, it’s
-              likely you’ll do so through an affiliate link.
-            </p>
-            <p className="text-justify text-lg mb-4  font-medium">
-              When you click on an affiliate link, a cookie is set and, if you
-              sign up for a VPN subscription, the provider is able to determine
-              you have come via our Website. As a result, we may earn a
-              commission, which allow us to run this Website as a free service
-              to our visitors.
-            </p>
-            <p className="text-justify text-lg mb-4  font-medium">
-              The Internet Advertising Bureau (IAB), a trade association for
-              online and mobile advertising, has{" "}
-              <Link
-                href="https://www.iabuk.com/content-hub/11416"
-                className="text-bluelink hover:underline"
-              >
-                published guides{" "}
-              </Link>
-              to help you understand how affiliate marketing works.
-            </p>
-          </div>
+          
           <div className="px-3 pt-6">
             <h2 className="text-left font-bold text-xl mb-5">
               How to Control Cookies
@@ -297,7 +271,7 @@ const CookiesPolicy = () => {
               <br />
               <span>
                 This policy was updated on:{" "}
-                <b className="font-bold">14 February 2024 </b>
+                <b className="font-bold">20 February 2025 </b>
               </span>
             </div>
           </div>

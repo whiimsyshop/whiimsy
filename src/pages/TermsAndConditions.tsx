@@ -9,33 +9,15 @@ const Term_Condition = () => {
         </div>
       <div className="px-3 pt-5 pb-10 tablet:flex tablet:justify-center tablet:items-center">
         <div className="px-3 pt-6 tablet:w-2/3">
-          <h2 className="text-left font-bold text-2xl mb-5">Introduction</h2>
+          <h2 className="text-left font-bold text-2xl mb-5">This page contains the "Terms and Conditions" under which you may use whiimsy.in.</h2>
           <p className="text-justify text-[16px] mb-4  ">
-            These terms of use set out the rules for using www.vpnguide.in and
-            any services delivered by it (the “Website”).
+          Please read this page carefully. If you do not accept the Terms and Conditions stated here, do not use this web site and service. 
+          By using this web site, you are indicating your acceptance to be bound by the terms of these Terms and Conditions. 
+          Whiimsy, (the "Company"), may revise these Terms and Conditions at any time by updating this posting. 
+          You should visit this page periodically to review the Terms and Conditions, because they are binding on you and may change without notice. 
+          The terms "You" and "User" as used herein refer to all individuals and/or entities accessing this web site for any reason.
           </p>
-          <p className="text-justify text-[16px] mb-4  ">
-            WHO WE ARE AND HOW TO CONTACT US
-          </p>
-          <p className="text-justify text-[16px] mb-4  ">
-            www.vpnguide.in is owned and operated by{" "}
-            <Link
-              href="https://velocityclick.in/"
-              className="text-bluelink font-semibold hover:underline"
-            >
-              Velocity Click
-            </Link>{" "}
-            (“we”, “our” or “us”). We are registered in Kolkata, West Bengal, India.
-          </p>
-          <p className="text-justify text-[16px] mb-4  ">
-            To contact us, please email{" "}
-            <Link
-              href="mailto:hello@vpnguide.in"
-              className="text-bluelink font-semibold hover:underline"
-            >
-              mhvpnguide@gmail.com
-            </Link>{" "}
-          </p>
+        
           <p className="text-justify text-[16px] mb-4  ">
             OTHER TERMS THAT APPLY TO YOUR USE OF THE WEBSITE
           </p>
@@ -62,96 +44,32 @@ const Term_Condition = () => {
             </Link>{" "}
             sets out information about the cookies used on the Website.
           </p>
-          <h2 className="text-left font-semibold text-2xl mb-5 mt-10">DISCLAMERS</h2>
+
+          <h2 className="text-left font-semibold text-2xl mb-5 mt-10">Orders and Acceptance</h2>
           <p className="text-justify text-[16px] mb-4  ">
-            You agree that use of the Website is at your own risk. In
-            particular, you understand that:
+          By submitting an order on www.whiimsy.mini.site, you warrant and represent that all personal information you have entered for is valid.
           </p>
-          <ol className="list-decimal pl-12">
-            <li>
-              <p className="text-justify text-[16px] mb-4 ">
-                <span className="font-bold">
-                  You are responsible for complying with applicable laws:
-                </span>{" "}
-                We are not a VPN service and we do not endorse the use of VPNs
-                for unlawful means. You should ensure you adhere to all
-                applicable laws and terms of service when using a VPN. Certain
-                third-party content providers prohibit the use of VPNs to access
-                their services and it is your responsibility to ensure that your
-                use of any VPN services for any particular purpose is lawful.
-              </p>
-            </li>
-            <li>
-              <p className="text-justify text-[16px] mb-4 ">
-                <span className="font-bold">
-                  You should not rely on content presented on the Website:
-                </span>{" "}
-                The content on the Website is provided for general information
-                only. It is not intended to amount to technical, financial, or
-                legal advice or any other type of advice on which you should
-                rely. In particular, it does not constitute an invitation or
-                authorisation to use VPN services for unlawful purposes nor does
-                it constitute legal advice on the lawfulness of their use for
-                any particular purpose. Before taking, or refraining from, any
-                action on the basis of the content on the Website, you must: (i)
-                check whether the relevant VPN service meets your particular
-                needs, (ii) review any terms and conditions which apply to that
-                service. If you’re not sure about either of these, we recommend
-                contacting the relevant VPN service or obtaining professional or
-                specialist advice.
-              </p>
-            </li>
-            <li>
-              <p className="text-justify text-[16px] mb-4 ">
-                <span className="font-bold">
-                  Information on the Website may be incomplete or out of date:
-                </span>{" "}
-                Although we make reasonable efforts to update the information on
-                the Website, we make no representations, warranties or
-                guarantees, whether express or implied, that the content on the
-                Website is accurate, complete or up to date. We are under no
-                obligation to update information on the Website and always
-                recommend you check a VPN provider’s website before purchasing
-                any goods or services. This Website does not include every VPN
-                provider and every available VPN offer.
-              </p>
-            </li>
-            <li>
-              <p className="text-justify text-[16px] mb-4 ">
-                <span className="font-bold">
-                  We are not responsible for websites we link to:
-                </span>{" "}
-                Where the Website contains links to other sites and resources
-                provided by third parties, these links are provided for your
-                information only. Such links should not be interpreted as
-                approval by us of those linked websites or information you may
-                obtain from them. We have no control over the contents of those
-                sites or resources. If you click on any links to other websites
-                you will immediately leave this Website.
-              </p>
-            </li>
-            <li>
-              <p className="text-justify text-[16px] mb-4 ">
-                <span className="font-bold">Advertising disclaimer:</span>
-                vpnguide.in is an advertising-supported comparison and review
-                site. To keep this a free resource, we use links that provide us
-                with compensation for referring you to partner VPN services any
-                may be compensated for featuring certain providers. The ordering
-                and scores of VPN services featured on our comparison tables /
-                lists may be influenced by commercial factors such as overall
-                popularity and conversion rates. Our reviews, review ratings and
-                scores are subject to change from time to time.
-              </p>
-            </li>
-            <li>
-              <p className="text-justify text-[16px] mb-4 ">
-                <span className="font-bold">Age restriction:</span> We are not a
-                You must be at least 18 years of age to use this Website. By
-                using the Website and agreeing to these terms of use, you
-                represent and warrant that you are at least 18 years of age.
-              </p>
-            </li>
-          </ol>
+          <p>
+          Except with respect to our out of stock items, you cannot change or cancel an order once the order has been submitted. 
+          </p>
+
+          <h2 className="text-left font-semibold text-2xl mb-5 mt-10">Lack of Availability</h2>
+          <p className="text-justify text-[16px] mb-4  ">
+          Whiimsy makes reasonable efforts on our website to provide correct inventory information. 
+          If an item you have ordered becomes unavailable after your order has been placed, we will cancel the item on your order and notify you by email or phone. 
+          We reserve the right to cancel out of stock items at any time.
+          </p>
+
+          <h2 className="text-left font-semibold text-2xl mb-5 mt-10">Pricing</h2>
+          <p className="text-justify text-[16px] mb-4  ">
+          All prices on our website are listed in Indian Curreny 'INR'. 
+          Prices do not include sales tax or shipping and handling charges which will be charged on all orders applicable and will be indicated at the time of placing your order during checkout. 
+          </p>
+          <p>
+          In the event a product is listed at an incorrect price due to typographical or other error in pricing, 
+          we have the right to refuse or cancel order placed for the products listed in the incorrect price whether or not the order has been confirmed or accepted and your credit card charged. 
+          If your credit card has already been charged for the purchase and your order is canceled, we will issue a credit to your credit card account in the amount of the incorrect price.
+          </p>
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">
             WE MAY MAKE CHANGES TO THESE TERMS AND THIS WEBSITE
@@ -169,84 +87,17 @@ const Term_Condition = () => {
           </p>
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">
-            WE MAY SUSPEND OR WITHDRAW THE WEBSITE
+          HOW YOU MAY USE MATERIAL ON THE WEBSITE
           </h2>
           <p className="text-justify text-[16px] mb-4  ">
-            The Website is made available free of charge.
+          You may use the Website and its contents for your own personal, non-commercial use only. You must not use any part of the content on the Website for commercial purposes without obtaining a licence to do so from us or our licensors.
           </p>
           <p className="text-justify text-[16px] mb-4  ">
-            We do not guarantee that the Website, or any content on it, will
-            always be available or be uninterrupted. We may suspend or withdraw
-            or restrict the availability of all or any part of the Website for
-            business and operational reasons. We will try to give you reasonable
-            notice of any suspension or withdrawal.
+          We are the owner or the licensee of all intellectual property rights in the Website, and in the material published on it. Those works are protected by copyright laws and treaties around the world. All such rights are reserved.
           </p>
           <p className="text-justify text-[16px] mb-4  ">
-            You are also responsible for ensuring that all persons who access
-            the Website through your internet connection are aware of these
-            terms of use and other applicable terms and conditions, and that
-            they comply with them.
+          You may retrieve, display and view the contents of the Website on a computer screen only. If you print off, copy or download any part of the Website in breach of these terms of use, your right to use the Website will cease immediately and you must, at our option, return or destroy any copies of the materials you have made.
           </p>
-
-          <h2 className="text-left font-semibold text-2xl mb-5 mt-10">
-            HOW YOU MAY USE MATERIAL ON THE WEBSITE
-          </h2>
-          <p className="text-justify text-[16px] mb-4  ">
-            You may use the Website and its contents for your own personal,
-            non-commercial use only. You must not use any part of the content on
-            the Website for commercial purposes without obtaining a licence to
-            do so from us or our licensors.
-          </p>
-          <p className="text-justify text-[16px] mb-4  ">
-            We are the owner or the licensee of all intellectual property rights
-            in the Website, and in the material published on it. Those works are
-            protected by copyright laws and treaties around the world. All such
-            rights are reserved
-          </p>
-          <p className="text-justify text-[16px] mb-4  ">
-            You may retrieve, display and view the contents of the Website on a
-            computer screen only. If you print off, copy or download any part of
-            the Website in breach of these terms of use, your right to use the
-            Website will cease immediately and you must, at our option, return
-            or destroy any copies of the materials you have made.
-          </p>
-
-          <h2 className="text-left font-semibold text-2xl mb-5 mt-10">
-            OUR RESPONSIBILITY FOR LOSS OR DAMAGE SUFFERED BY YOU
-          </h2>
-          <p className="text-justify text-[16px] mb-4  ">
-            We do not exclude or limit in any way our liability to you where it
-            would be unlawful to do so. This includes liability for death or
-            personal injury caused by our negligence or the negligence of our
-            employees, agents or subcontractors and for fraud or fraudulent
-            misrepresentation.
-          </p>
-          <p className="text-justify text-[16px] mb-4  ">
-            Please note that we only provide the Website for domestic and
-            private use. You agree not to use the Website for any commercial or
-            business purposes, and we have no liability to you for any loss of
-            profit, loss of business, business interruption, or loss of business
-            opportunity.
-          </p>
-          <p className="text-justify text-[16px] mb-4  ">
-            However, if you are seeking to use the Website for commercial
-            purposes or are a business user:
-          </p>
-          <ol className="list-decimal pl-12">
-            <li>
-              we exclude all implied conditions, warranties, representations or
-              other terms that may apply to the Website or any content on it.
-            </li>
-            <li>
-              we will not be liable to you for any loss or damage, whether in
-              contract, tort (including negligence), breach of statutory duty,
-              or otherwise, even if foreseeable, arising under or in connection
-              with i) use of, or inability to use, the Website or ii) use of or
-              reliance on any content displayed on the Website. In particular,
-              we will not be liable for any indirect or consequential loss or
-              damage.
-            </li>
-          </ol>
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">
             WE ARE NOT RESPONSIBLE FOR VIRUSES AND YOU MUST NOT INTRODUCE THEM
@@ -277,41 +128,48 @@ const Term_Condition = () => {
             WHICH COUNTRY’S LAWS APPLY TO THESE TERMS OF USE?
           </h2>
           <p className="text-justify text-[16px] mb-4  ">
-            These terms of use, their subject matter and their formation, are
-            governed by English law. However, your statutory rights are
-            unaffected.
+          These terms of use, their subject matter and their formation, are governed by Indian law. 
+          However, your statutory rights are unaffected.
           </p>
           <p className="text-justify text-[16px] mb-4  ">
-            You and we both agree that the courts of England and Wales will have
-            exclusive jurisdiction or any disputes or matters relating to the
-            Website, unless you are a consumer and resident outside of England
-            and Wales.
+          You and we both agree that the courts of India will have exclusive jurisdiction over any disputes or matters relating to the Website, unless you are a consumer and resident outside of India.
           </p>
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">
             OUR AGREEMENT IS WITH YOU ONLY
           </h2>
           <p className="text-justify text-[16px] mb-4  ">
-            No one other than a party to these terms has any right to enforce
-            any of these terms of use.
+          No one other than a party to these terms has any right to enforce any of these terms of use.
           </p>
           <p className="text-justify text-[16px] mb-4  ">
-            You may not transfer, assign or otherwise dispose of your rights and
-            obligations under these terms of use to another person or legal
-            entity.
+          You may not transfer, assign or otherwise dispose of your rights and obligations under these terms of use to another person or legal entity.
+          </p>
+
+          <h2 className="text-left font-semibold text-2xl mb-5 mt-10">Contacting Company</h2>
+          <p className="text-justify text-[16px] mb-4  ">
+          Users may contact the Company, for customer support or service at the following e-mail address(s):
+          </p>
+          <p>
+            Email:
+               <a href="mailto:whiimsyteam@gmail.com" class="text-sm hover:text-gray-300">
+                <span class="pl-1">whiimsyteam@gmail.com</span>
+               </a>
           </p>
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">OUR BRAND</h2>
           <p className="text-justify text-[16px] mb-4  ">
-            vpnguide is a trading name owned by{" "}
+            Whiimsy is a trading name owned by{" "}
             <Link
-              href="https://velocityclick.in/"
+              href="https://whiimsy.in/"
               className="text-bluelink font-semibold hover:underline"
             >
-              Velocity Click.
+              Whiimsy.
             </Link>
           </p>
-          <p className="text-justify text-[16px] mb-4 font-bold">Last updated: 30/04/2019</p>
+          <span>
+                This policy was updated on:{" "}
+                <b className="font-bold">25 February 2025 </b>
+              </span>
         </div>
       </div>
     </section>
