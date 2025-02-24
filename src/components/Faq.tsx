@@ -36,17 +36,15 @@ const content1: ContentArray = [
           `,
   },
   {
-    heading: "Question 4?",
+    heading: "Do you customise bulk gift boxes with a mix of products from other brands?",
     content: `
-            <p>MOHIT. <span style="font-weight: 500;">Singh</span></p>
-            <p>Blah</p>
+            <p>Of course. Whether you’d like to include chocolates, dry fruits, bath or leather products, we can create custom boxes for your bulk orders with your favourite products.</p>
           `,
   },
   {
-    heading: "Question 5?",
+    heading: "Can you deliver PAN India?",
     content: `
-            <p>MOHIT. <span style="font-weight: 500;">Singh</span></p>
-            <p>Blah</p>
+            <p>Yes, we can! Rest assured we can get your products to you safe and sound no matter where you are in the country.</p>
           `,
   },
 ];

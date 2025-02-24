@@ -2,6 +2,8 @@ import { MdOutlinePhone, MdOutlineLocationOn } from 'react-icons/md';
 import { SlEnvolope } from 'react-icons/sl';
 import dynamic from 'next/dynamic';
 import HeaderBox from "@/components/HeaderBox";
+import Link from "next/link";
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 
 // Dynamically import the ContactForm component
 const ContactForm = dynamic(() => import("../components/ContactForm"), { ssr: false });
@@ -34,6 +36,17 @@ const ContactPage = () => {
               <MdOutlineLocationOn className="text-2xl laptop:text-2xl" />
               <span>Kolkata, West Bengal, India</span>
             </div>
+            <div className="flex justify-center tablet:justify-start gap-3 mt-5">
+            <Link href="www.instagram.com/whiimsy.in" className="bg-black rounded-full p-2" aria-label="Instagram">
+              <FaInstagram className="text-white" />
+            </Link>
+            <Link href="https://www.facebook.com/profile.php?id=61571833596666" className="bg-black rounded-full p-2" aria-label="Facebook">
+              <FaFacebookF className="text-white" />
+            </Link>
+            <Link href="https://wa.me/+918981256860?text=Hey!%20Whiimsy%20Team." className="bg-black rounded-full p-2" aria-label="Whatsapp">
+              <FaWhatsapp className="text-white" />
+            </Link>
+          </div>
           </div>
         </div>
       </div>

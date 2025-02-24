@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineMail } from "react-icons/hi";
-import { FaXTwitter, FaYoutube } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col pt-10 lg:pl-[7rem] lg:pr-[1.5rem] max-w-full border-t border-gray-300 bg-[#4ABDAC] text-white">
+    <footer className="flex flex-col pt-10 lg:pl-[7rem] lg:pr-[1.5rem] max-w-full border-t border-gray-300 bg-[#165B33] text-white">
       {/* Top Section */}
       <div className="flex flex-col tablet:flex-row px-6 tablet:px-10 4k:mx-[200px] text-center tablet:text-left">
         {/* Left Section */}

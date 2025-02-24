@@ -8,12 +8,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.9,
       },
-      {
+    {
+        url: "https://whiimsy.in/shop",
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+    },
+    {
         url: "https://whiimsy.in/services",
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.9,
-      },
+    },
     {
       url: "https://whiimsy.in/about",
       lastModified: new Date(),
@@ -33,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: "https://whiimsy.in/giveaway",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: "https://whiimsy.in/privacy-policy",
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -46,6 +58,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://whiimsy.in/terms-and-conditions",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: "https://whiimsy.in/return-and-shipping",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,

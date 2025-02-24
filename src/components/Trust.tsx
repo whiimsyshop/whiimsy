@@ -5,27 +5,27 @@ import Image from "next/image";
 const gridData = [
     {
         "title": "Handcrafted with Love",
-        "icon": "/home/user.png"
+        "icon": "/home/trust/user.png"
     },
     {
         "title": "All Natural Ingredients",
-        "icon": "/home/cover.png"
+        "icon": "/home/trust/cover.png"
     },
     {
         "title": "Eco-Friendly Packaging",
-        "icon": "/home/rti.png"
+        "icon": "/home/trust/rti.png"
     },
     {
         "title": "Unique Scents",
-        "icon": "/home/target.png"
+        "icon": "/home/trust/target.png"
     },
     {
         "title": "Custom Orders Available",
-        "icon": "/home/campaign.png"
+        "icon": "/home/trust/campaign.png"
     },
     {
         "title": "Sustainable Practices",
-        "icon": "/home/multi.png"
+        "icon": "/home/trust/multi.png"
     }
 ];
 

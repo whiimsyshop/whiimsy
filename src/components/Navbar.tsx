@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#4ABDAC] shadow-md">
+    <nav className="sticky top-0 z-50 w-full bg-[#165B33] shadow-md">
       <header className="flex items-center justify-between px-6 py-4 tablet:px-10 laptop:px-[8rem]">
         {/* Logo */}
         <div className="logo-name flex items-center gap-4">
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
               <Link
                 href={item.link}
                 className={`text-white hover:text-gray-300 
-                  ${item.mainHeading === "SHOP NOW" ? "bg-[#E8D6C5] px-4 py-2 rounded-full" : ""}`}
+                  ${item.mainHeading === "SHOP NOW" ? "bg-[#F7CAC9] px-4 py-2 rounded-full" : ""}`}
               >
                 {item.mainHeading}
               </Link>
@@ -67,12 +67,12 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Sidebar Navigation */}
       <div
-        className={`fixed top-0 right-0 bg-[#4ABDAC] w-[60%] max-w-[280px] shadow-lg transform transition-transform duration-300 
+        className={`fixed top-0 right-0 bg-[#165B33] w-[60%] max-w-[280px] shadow-lg transform transition-transform duration-300 
         ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div
           ref={menuRef}
-          className="flex flex-col p-4 bg-[#4ABDAC] shadow-lg"
+          className="flex flex-col p-4 bg-[#165B33] shadow-lg"
           style={{ height: "auto", minHeight: "40vh", maxHeight: "80vh" }} // Adjusts height dynamically
         >
           {/* Close Button */}

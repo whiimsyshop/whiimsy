@@ -29,7 +29,7 @@ const FreeCandle: React.FC = () => {
       <HeaderBox title="Free Candle" />
       <section
         id="section-1"
-        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
+        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-[#f8eeee] p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
       >
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold mb-4">Everyone deserves a gift!</span>

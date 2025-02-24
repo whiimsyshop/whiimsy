@@ -24,7 +24,7 @@ const ServicesPage: React.FC = () => {
   return (
     <div>
       <HeaderBox title="Services" />
-      <div className="flex flex-wrap justify-center gap-4 mt-8 sticky top-0 mx-2 my-5 lg:mx-32 lg:py-4 rounded-xl bg-[#4abdac43] z-10 mb-8 px-4 py-4">
+      <div className="flex flex-wrap justify-center gap-4 mt-8 sticky top-0 mx-2 my-5 lg:mx-32 lg:py-4 rounded-xl bg-[#f5dcdc] z-10 mb-8 px-4 py-4">
         <button
           className="btn-header rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg bg-red-500 shadow-lg hover:shadow-xl transition-all duration-200"
           onClick={() => handleScroll("section-1")}
@@ -72,7 +72,7 @@ const ServicesPage: React.FC = () => {
       {/* Section 1: Candle Making Workshops */}
       <section
         id="section-1"
-        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
+        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-[#f8eeee] p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
       >
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold mb-4">Candle Making Workshops</span>
@@ -102,7 +102,7 @@ const ServicesPage: React.FC = () => {
       {/* Section 2: Recycle Program */}
       <section
         id="section-2"
-        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse"
+        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-[#f8eeee] p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse"
       >
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Recycle Program</span>
@@ -136,7 +136,7 @@ const ServicesPage: React.FC = () => {
       {/* Section 3: Corporates */}
       <section
         id="section-3"
-        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
+        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-[#f8eeee] p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
       >
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold mb-4">Corporates</span>
@@ -165,7 +165,7 @@ const ServicesPage: React.FC = () => {
       {/* Section 4: Collaborations */}
       <section
         id="section-4"
-        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse"
+        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-[#f8eeee] p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse"
       >
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Collaborations</span>
@@ -194,7 +194,7 @@ const ServicesPage: React.FC = () => {
       {/* Section 5: Fundraising */}
       <section
         id="section-5"
-        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
+        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-[#f8eeee] p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
       >
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Fundraising - Charitable Donation</span>
@@ -225,7 +225,7 @@ const ServicesPage: React.FC = () => {
       {/* Section 6: Wholesale */}
       <section
         id="section-6"
-        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse"
+        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-[#f8eeee] p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row-reverse"
       >
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Wholesale - Private Label</span>
@@ -254,7 +254,7 @@ const ServicesPage: React.FC = () => {
       {/* Section 7: Donations */}
       <section
         id="section-7"
-        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-gray-200 p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
+        className="mx-2 my-2 flex flex-col-reverse gap-12 rounded-xl bg-[#f8eeee] p-5 md:mx-16 md:p-10 lg:mx-32 lg:flex-row"
       >
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Donations</span>
