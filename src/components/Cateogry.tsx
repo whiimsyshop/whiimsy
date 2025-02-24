@@ -2,16 +2,16 @@ import Image from "next/image";
 
 const categories = 
 [
-  { name: "Soy Candles", icon: "/home/category/candles.png"}, //, link: "/soy-candles" 
-  { name: "Bulk Orders", icon: "/home/category/bulk.png"}, //, link: "/bulk-orders" 
-  { name: "Ceramic Vases", icon: "/home/category/ceramic.png"}, //, link: "/ceramic-vasess" 
-  { name: "Candle Pouring", icon: "/home/category/pouring.png"}, //, link: "/candle-pouring" 
-  { name: "Fragnance Bar", icon: "/home/category/bar.png"}, //, link: "/fragnance-bar" 
-  { name: "Live Events", icon: "/home/category/event.png"}, //, link: "/live-events" 
-  { name: "Ceramic Tray", icon: "/home/category/ceramic.png",}, // link: "/ceramic-tray" 
-  { name: "Gift Boxes", icon: "/home/category/gift.png"}, //, link: "/gift-boxes" 
-  { name: "Ceramic Diffuser", icon: "/home/category/diffuser.png"}, //, link: "/ceramic-diffuser" 
-  { name: "Wax Melts", icon: "/home/category/melts.png"}, //, link: "/wax-melts" 
+  { name: "Soy Candles", icon: "/home/category/candles.png", link: "/soy-candles" },
+  { name: "Bulk Orders", icon: "/home/category/bulk.png", link: "/bulk-orders" },
+  { name: "Ceramic Vases", icon: "/home/category/ceramic.png", link: "/ceramic-vasess" },
+  { name: "Candle Pouring", icon: "/home/category/pouring.png", link: "/candle-pouring" },
+  { name: "Fragnance Bar", icon: "/home/category/bar.png", link: "/fragnance-bar" },
+  { name: "Live Events", icon: "/home/category/event.png", link: "/live-events" },
+  { name: "Ceramic Tray", icon: "/home/category/ceramic.png",link: "/ceramic-tray" },
+  { name: "Gift Boxes", icon: "/home/category/gift.png", link: "/gift-boxes" },
+  { name: "Ceramic Diffuser", icon: "/home/category/diffuser.png", link: "/ceramic-diffuser" },
+  { name: "Wax Melts", icon: "/home/category/melts.png", link: "/wax-melts" },
 ];
 
 const CategorySection = () => {
