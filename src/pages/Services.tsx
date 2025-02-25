@@ -28,16 +28,22 @@ const ServicesPage: React.FC = () => {
     if (section) {
       const navbarHeight = document.querySelector("header")?.clientHeight || 0;
       const buttonContainerHeight = document.querySelector(".btn-header")?.clientHeight || 0;
-      const extraPadding = 90;
-      const mobileOffset = window.innerWidth <= 768 ? buttonContainerHeight : 0;
+      
+      const isMobile = window.innerWidth <= 768;
+  
+      // Separate extra padding for mobile and desktop
+      const extraPadding = isMobile ? 130 : 90;
+      const mobileOffset = isMobile ? buttonContainerHeight : 0;
+      
       const offsetPosition = section.offsetTop - navbarHeight - mobileOffset - extraPadding;
-
+  
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
     }
   };
+  
 
   return (
     <div>
