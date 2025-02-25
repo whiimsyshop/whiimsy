@@ -39,25 +39,27 @@ html {
 /* -------------------------- Home Page -------------------------- */
 
 .image-container {
-  width: 100%; /* Set the desired width */
-  height: 40rem; /* Set the desired height */
-  overflow: hidden; /* Crop overflow */
+  width: 100%;
+  height: 40rem;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Important for button positioning */
 }
 
 /* Image inside the div */
 .image-container img {
-  width: 100%; /* Fit image to div width */
-  height: 100%; /* Fit image to div height */
-  object-fit: cover; /* Preserve aspect ratio, crop excess */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.image-container a {
-  position: absolute; /* Absolute position relative to the container */
-  bottom: 5rem; /* Position from the bottom */
-  right: 40rem; /* Position from the right */
+.shop-now-button {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%; /* Center the button */
+  transform: translateX(-50%); /* Ensures it's perfectly centered */
   padding: 15px 40px;
   background-color: #e8d6c5;
   color: #5c4033;
@@ -71,22 +73,36 @@ html {
 }
 
 /* Button hover effect */
-.image-container a:hover {
+.shop-now-button:hover {
   background-color: #d6c2af;
 }
 
-.shop-now-button {
-  padding: 5px 10px;
-  background-color: #e8d6c5;
-  color: #5c4033;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 14px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+/* -------------------------- Mobile Responsiveness -------------------------- */
+@media (max-width: 768px) {
+  .image-container {
+    height: 25rem; /* Reduce height on smaller screens */
+  }
+
+  .shop-now-button {
+    bottom: 2rem;
+    font-size: 16px;
+    padding: 10px 25px;
+  }
 }
+
+@media (max-width: 480px) {
+  .image-container {
+    height: 20rem;
+  }
+
+  .shop-now-button {
+    bottom: 1.5rem;
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+
 
 /* -------------------------- Contact Form -------------------------- */
 .ContactForm {

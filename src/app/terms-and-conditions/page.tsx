@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'Terms and Conditions - Whiimsy',
-  description: 'Blah',
+  description: 'Read Whiimsy’s Terms & Conditions for details on shopping, returns, and more. Know your rights while enjoying our products!',
   keywords: 'Candle',
   authors: [{ name: 'Whiimsy' }],
   viewport: 'width=device-width, initial-scale=1',

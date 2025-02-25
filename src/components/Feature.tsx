@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const features = [
   { 
-    title: "Lab Tested", 
-    description: "Research & Development", 
+    title: "Unique Scents", 
+    description: "Mood-boosting fragrances", 
     icon: "/home/feature/lab.webp" 
   },
   { 

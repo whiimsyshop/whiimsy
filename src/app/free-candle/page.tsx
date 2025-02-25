@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Free Candle - Whiimsy",
-  description: 'Blah',
+  description: 'Love surprises? Get a free candle every month! Check out the details and claim your cozy gift from Whiimsy today.',
   keywords: 'Candle',
   authors: [{ name: 'Whiimsy' }],
   viewport: "width=device-width, initial-scale=1",

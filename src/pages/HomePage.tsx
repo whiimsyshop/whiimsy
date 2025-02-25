@@ -14,30 +14,28 @@ const HomePage = () => {
     <>
       <header>
       <Cateogry/>
-        <div className="header-top">
-          <div className="banner_main container">
-            <div className="image-container">
-              <img
-                src="./home/HeroSection.jpg"
-                alt="Candle Image"
-                id="candle-image"
-              />
-              <a href="/shop" target="_blank">
-                Shop Now
-              </a>
-            </div>
-          </div>
+      
+      <div className="header-top">
+        <div className="banner_main container">
+          <div className="image-container">
+            <img src="/home/HeroSection.jpg" alt="Candle Image" id="candle-image" />
+            <a href="/shop" target="_blank" className="shop-now-button">
+              Shop Now
+            </a>
+         </div>
         </div>
+      </div>
+
       </header>
       
       <Trust />
       <Faq />
       <WhyChooseUs/>
       <EmailSubscription />
-      <Feature/>
           <div className="flex justify-center my-4"> {/* New container for centering */}
                 <Heart />
           </div>
+      <Feature/>
     </>
   );
 };
