@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
-import WhatsAppButton from "@/components/WhatsappButton";
-import BackToTop from "@/components/BackToTop";
+import WhatsAppButton from "../components/WhatsappButton";
+import BackToTop from "../components/BackToTop";
 
 import {
   Kaisei_Tokumin,
