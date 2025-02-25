@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
+import WhatsAppButton from "@/components/WhatsappButton";
+import BackToTop from "@/components/BackToTop";
+
 import {
   Kaisei_Tokumin,
   Kantumruy_Pro,
   Inknut_Antiqua,
 } from "@next/font/google";
+
 import ClientFooter from "../components/ClientFooter";
 import Navbar from "@/components/Navbar";
 
@@ -77,6 +81,8 @@ export default function RootLayout({
           {children}
           <ClientFooter />
         </div>
+        <WhatsAppButton/>
+        <BackToTop/>
       </body>
     </html>
   );

@@ -22,14 +22,20 @@ const About: React.FC = () => {
                         />
                 </div>
                 <div className="flex flex-col justify-center items-center px-6 sm:px-12 md:px-20 lg:px-40 text-gray-700">
-                  <p className="text-left text-base sm:text-lg md:text-xl mb-4 font-medium">
-                   <strong>Each Whiimsy candle is a labor of love—an extension of our slow-living philosophy, thoughtfully designed to help you drift off to a happy space.</strong>
+                  <p className="text-center text-sm sm:text-base md:text-lg mb-4 font-medium">
+                   <strong>Whiimsy candles are more than just décor—they're a little reminder to slow down, breathe, unwind, and escape to your happy place.</strong>
                   </p>
-                  <p className="text-left text-base sm:text-lg md:text-xl mb-4 font-medium">
-                   At Whiimsy, we believe a great candle is more than just a source of light—it's an experience, a memory, a mood. Our passion for premium scented candles drives us to craft luxurious, handcrafted pieces that illuminate spaces and uplift spirits.
+                  <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                  At Whiimsy, we believe a great candle is more than just a source of light—it's an experience, a memory, a mood. Our passion for premium candles drives us to craft luxurious, handcrafted pieces that illuminate spaces and uplift spirits. 
                   </p>
-                  <p className="text-left text-base sm:text-lg md:text-xl mb-4 font-medium">
-                  Inspired by the enchanting power of scents and the art of candle-making, Whiimsy was born to bring warmth and elegance into every home. What began as a small project has grown into a beloved brand, cherished by candle enthusiasts worldwide.
+                  <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                  Whiimsy was born from a deep love for the little things—the magic of scents, the cozy glow of candlelight, and the joy of creating something beautiful.
+                  </p>
+                  <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                  What started as a simple passion, hand-pouring candles with care, soon became something bigger—a way to bring warmth, joy, and a touch of whimsy into every home. Each candle is made with love, inspired by the little moments that make life beautiful—the soft flicker on a quiet night, the familiar scent that brings back a memory, the feeling of comfort in a space that truly feels like yours. 
+                  </p>
+                  <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                  Today, Whiimsy is more than just a brand; it’s a part of your stories, your moments, your happy places—and that’s what makes it so special.
                   </p>
                 </div>
             </div>
@@ -51,23 +57,21 @@ const About: React.FC = () => {
                 </div>
                 <div className="flex flex-col justify-center items-center px-4 sm:px-10 md:px-20 lg:px-40">
                     <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
-                       Founded with a passion for aesthetic home décor, Whiimsy creates handcrafted candles that blend artistry with functionality. Each piece is made with care, ensuring a luxurious burn and captivating fragrance to elevate your space.
+                    At Whiimsy, candles are more than just home decor—they're an experience. Each one is thoughtfully handcrafted to blend artistry with functionality, offering a luxurious burn and captivating scent that elevates your space. Inspired by Pinterest-worthy aesthetics, our candles double as statement pieces, adding warmth, personality, and a touch of whimsy to every corner of your home.
                     </p>
                     <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
-                       Inspired by Pinterest-worthy designs, our candles are more than just home fragrances—they’re statement pieces, adding warmth and personality to every corner of your home.
-                    </p>
-                    <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
-                       Sustainability is at our core. We source eco-friendly materials, use minimal packaging, and continuously innovate to reduce our footprint. Every candle is cruelty-free and made with responsibly sourced ingredients.
+                    Sustainability is at our heart—we use eco-friendly materials, minimal packaging, and responsibly sourced ingredients to ensure every candle is cruelty-free and kind to the planet. But Whiimsy is about more than just candles; it’s about community. For every 10 products sold, we give back to a cause that aligns with our values, spreading light in more ways than one.
                     </p>
                     <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
                        Community matters. For every 10 products sold, we donate to a charity that aligns with our values, spreading light beyond our candles.
                     </p>
-                    <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
+                    <p className="text-center text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
                       <strong>Explore our collection and let Whiimsy brighten your world—one candle at a time.</strong>
                     </p>
                 </div>
             </div>
             {/* -------------------------- About Our Product End -------------------------- */}
+
                 <div className="flex justify-center my-4"> {/* New container for centering */}
                 <Heart />
                 </div>
