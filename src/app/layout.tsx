@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
-import WhatsAppButton from "../components/WhatsappButton";
+import WhatsAppButton from "../components/WhatsAppButton";
 import BackToTop from "../components/BackToTop";
 
 import {
