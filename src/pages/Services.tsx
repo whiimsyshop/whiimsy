@@ -1,18 +1,36 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import HeaderBox from "@/components/HeaderBox";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const ServicesPage: React.FC = () => {
+  const [navbarHeight, setNavbarHeight] = useState(0);
+
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      const header = document.querySelector("header");
+      setNavbarHeight(header?.clientHeight || 0);
+    };
+
+    updateNavbarHeight();
+    window.addEventListener("resize", updateNavbarHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateNavbarHeight);
+    };
+  }, []);
+
   const handleScroll = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       const navbarHeight = document.querySelector("header")?.clientHeight || 0;
       const buttonContainerHeight = document.querySelector(".btn-header")?.clientHeight || 0;
+      const extraPadding = 90;
       const mobileOffset = window.innerWidth <= 768 ? buttonContainerHeight : 0;
-      const offsetPosition = section.offsetTop - navbarHeight - mobileOffset + 1;
+      const offsetPosition = section.offsetTop - navbarHeight - mobileOffset - extraPadding;
 
       window.scrollTo({
         top: offsetPosition,
@@ -24,7 +42,9 @@ const ServicesPage: React.FC = () => {
   return (
     <div>
       <HeaderBox title="Services" />
-      <div className="flex flex-wrap justify-center gap-4 mt-8 sticky top-0 mx-2 my-5 lg:mx-32 lg:py-4 rounded-xl bg-[#f5dcdc] z-10 mb-8 px-4 py-4">
+      <div className="flex flex-wrap justify-center gap-4 mt-8 sticky top-0 mx-2 my-5 lg:mx-32 lg:py-4 rounded-xl bg-[#f5dcdc] z-10 mb-8 px-4 py-4"
+       style={{ position: "sticky", top: `${navbarHeight}px` }}
+       >
         <button
           className="btn-header rounded-full px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg bg-red-500 shadow-lg hover:shadow-xl transition-all duration-200"
           onClick={() => handleScroll("section-1")}
@@ -86,7 +106,7 @@ const ServicesPage: React.FC = () => {
             href="/workshop"
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
+            className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200 cursor-not-allowed" 
           >
             Coming Soon
           </Link>
@@ -149,7 +169,7 @@ const ServicesPage: React.FC = () => {
             href="/corporate"
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
+            className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200 cursor-not-allowed"
           >
             Coming Soon
           </Link>
@@ -209,7 +229,7 @@ const ServicesPage: React.FC = () => {
             href="/contact-us"
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
+            className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200 cursor-not-allowed"
           >
             Coming Soon
           </Link>
