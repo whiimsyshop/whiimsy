@@ -7,6 +7,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 const navdata = [
   { mainHeading: "About", link: "/about" },
+  { mainHeading: "Gallery", link: "/gallery" },
   { mainHeading: "Free Candle", link: "/free-candle" },
   { mainHeading: "Services", link: "/services" },
   { mainHeading: "Giveaway", link: "/giveaway" },

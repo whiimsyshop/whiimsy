@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 Allow: /shop
 Allow: /about
+Allow: /gallery
 Allow: /services
 Allow: /contact-us
 Allow: /free-candle
