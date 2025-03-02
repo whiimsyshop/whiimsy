@@ -64,12 +64,14 @@ const AnalyticsTracker = () => {
       }
 
       // 📸 Promo Banner Click
-      if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
-        window.gtag("event", "banner_click", {
-          event_category: "Promotion",
-          event_label: target.alt || "Promo Banner",
-        });
-      }
+if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
+  const imgTarget = target as HTMLImageElement; // ✅ Fix: Cast target to HTMLImageElement
+  window.gtag("event", "banner_click", {
+    event_category: "Promotion",
+    event_label: imgTarget.alt || "Promo Banner",
+  });
+}
+
 
       // ▶️ Video Play (for embedded YouTube videos)
       if (target.tagName === "IFRAME" && target.src.includes("youtube.com")) {
