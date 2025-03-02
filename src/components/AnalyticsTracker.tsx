@@ -216,8 +216,6 @@ const AnalyticsTracker = () => {
     }
   }, []);
 
-  
-
   return null; // No UI rendering
 };
 
