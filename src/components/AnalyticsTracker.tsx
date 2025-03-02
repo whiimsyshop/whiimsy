@@ -75,6 +75,69 @@ const AnalyticsTracker = () => {
     }
   }, [pathname]);
 
+  // 📌 Track Scroll Depth
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!window.gtag) return;
+
+      const scrollDepth = ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight) * 100;
+      window.gtag("event", "scroll", {
+        event_category: "User Interaction",
+        event_label: "Scroll Depth",
+        value: Math.round(scrollDepth),
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // 📌 Track Visibility Change (when user switches tabs)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!window.gtag) return;
+
+      window.gtag("event", "visibility_change", {
+        event_category: "User Engagement",
+        event_label: document.visibilityState,
+      });
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
+  // 📌 Track Time Spent on Page
+  useEffect(() => {
+    let startTime = Date.now();
+    return () => {
+      let timeSpent = Math.round((Date.now() - startTime) / 1000);
+      window.gtag("event", "time_on_page", {
+        event_category: "User Engagement",
+        event_label: pathname,
+        value: timeSpent,
+      });
+    };
+  }, [pathname]);
+
+  // 📌 Track Exit Intent (detect when user moves cursor out of viewport)
+  useEffect(() => {
+    const handleExitIntent = (event: MouseEvent) => {
+      if (event.clientY < 10) {
+        window.gtag("event", "exit_intent", {
+          event_category: "User Behavior",
+          event_label: pathname,
+        });
+      }
+    };
+    document.addEventListener("mouseleave", handleExitIntent);
+    return () => document.removeEventListener("mouseleave", handleExitIntent);
+  }, []);
+
   return null; // No UI rendering
 };
 
