@@ -179,15 +179,19 @@ useEffect(() => {
 // 📌 Capture Click Position (Heatmap Simulation)
 useEffect(() => {
   const handleClick = (event: MouseEvent) => {
-    window.gtag("event", "click_position", {
-      event_category: "User Interaction",
-      event_label: `X: ${event.clientX}, Y: ${event.clientY}`,
-      page_path: pathname,
-    });
+    if (window.gtag) { // ✅ Ensure gtag exists before calling
+      window.gtag("event", "click_position", {
+        event_category: "User Interaction",
+        event_label: `X: ${event.clientX}, Y: ${event.clientY}`,
+        page_path: pathname,
+      });
+    }
   };
+  
   document.addEventListener("click", handleClick);
   return () => document.removeEventListener("click", handleClick);
 }, [pathname]);
+
 
 
 
