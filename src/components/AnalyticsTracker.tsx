@@ -1,26 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import ReactGA from 'react-ga'; // For Google Analytics or GTM
-import Cookies from 'js-cookie'; // For UTM Tracking
-import { useLocalStorage } from 'react-use'; // Optional for time spent tracking
-
-// Optional heatmap tracking: you may use a different library if 'react-heatmap' isn't compatible
-// import heatmap from 'react-heatmap'; 
+import ReactGA from 'react-ga'; // For Google Analytics
 
 const AnalyticsTracker = () => {
   const [startTime, setStartTime] = useState(Date.now());
   const [scrollPosition, setScrollPosition] = useState(0);
   const router = useRouter();
-  const [utmParams, setUtmParams] = useState<any>({});
 
   useEffect(() => {
-    // Initialize Google Analytics or GTM
-    ReactGA.initialize('YOUR_GOOGLE_ANALYTICS_ID'); // Replace with your Google Analytics ID
+    // Initialize Google Analytics
+    ReactGA.initialize('G-JGVYE0JRWB'); // Replace with your Google Analytics ID
     ReactGA.pageview(window.location.pathname + window.location.search);
-
-    // Get UTM Parameters from the URL or cookies
-    const utms = getUTMParameters();
-    setUtmParams(utms);
 
     // Track initial page view
     trackPageView();
@@ -47,28 +37,6 @@ const AnalyticsTracker = () => {
     };
   }, []);
 
-  // Capture UTM parameters
-  const getUTMParameters = () => {
-    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-    const params: any = {};
-    
-    // Capture UTM params from the URL query
-    utmParams.forEach((param) => {
-      if (router.query[param]) {
-        params[param] = router.query[param];
-        // Store UTM in cookies to persist across pages
-        Cookies.set(param, router.query[param], { expires: 30 }); // Set expiry to 30 days
-      } else {
-        const cookieValue = Cookies.get(param);
-        if (cookieValue) {
-          params[param] = cookieValue;
-        }
-      }
-    });
-
-    return params;
-  };
-
   const trackPageView = () => {
     ReactGA.pageview(window.location.pathname + window.location.search);
     console.log('Pageview tracked:', window.location.pathname);
@@ -94,19 +62,9 @@ const AnalyticsTracker = () => {
     });
   };
 
-  const trackUTMParameters = () => {
-    console.log('UTM Parameters:', utmParams);
-    ReactGA.event({
-      category: 'UTM',
-      action: 'UTM Parameters',
-      label: JSON.stringify(utmParams)
-    });
-  };
-
   return (
     <div>
-      {/* Optionally, insert heatmap visualization */}
-      {/* You can customize the heatmap tracking here */}
+      {/* Display scroll position as a percentage */}
       <div style={{ position: 'absolute', top: '50%', left: '50%', zIndex: 999 }}>
         <p>Scroll Position: {Math.round(scrollPosition)}%</p>
       </div>
