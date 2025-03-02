@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useRouter } from "next/router"; // Use useRouter for broader compatibility
+import { usePathname } from "next/navigation";
 
 declare global {
   interface Window {
@@ -8,8 +8,7 @@ declare global {
 }
 
 const AnalyticsTracker = () => {
-  const router = useRouter();
-  const pathname = router.pathname;
+  const pathname = usePathname();
 
   // 📌 Track Page Views
   useEffect(() => {
@@ -217,17 +216,7 @@ const AnalyticsTracker = () => {
     }
   }, []);
 
-  // 📌 Track Search Engine Referrals
-  useEffect(() => {
-    const referrer = document.referrer;
-    if (referrer && referrer.includes("google.com")) {
-      window.gtag("event", "search_engine_referral", {
-        event_category: "Referral",
-        event_label: "Google Search",
-        page_path: pathname,
-      });
-    }
-  }, []);
+  
 
   return null; // No UI rendering
 };
