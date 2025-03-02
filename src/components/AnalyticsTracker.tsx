@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";  // Import useRouter instead of usePathname
 
 declare global {
   interface Window {
@@ -8,7 +8,7 @@ declare global {
 }
 
 const AnalyticsTracker = () => {
-  const pathname = usePathname();
+  const { pathname } = useRouter();  // Use useRouter to get the pathname
 
   // 📌 Track Page Views
   useEffect(() => {
