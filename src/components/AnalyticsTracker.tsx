@@ -192,7 +192,33 @@ useEffect(() => {
   return () => document.removeEventListener("click", handleClick);
 }, [pathname]);
 
+// 📌 Track 404 Errors (Broken Links)
+useEffect(() => {
+  const handle404Error = () => {
+    if (document.title.includes("404") && window.gtag) {
+      window.gtag("event", "error_404", {
+        event_category: "Error",
+        event_label: "Page Not Found",
+        page_path: pathname,
+      });
+    }
+  };
 
+  window.addEventListener("error", handle404Error);
+  return () => window.removeEventListener("error", handle404Error);
+}, [pathname]);
+
+// 📌 Track Page Load Time
+useEffect(() => {
+  const pageLoadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+  if (window.gtag) {
+    window.gtag("event", "page_load_time", {
+      event_category: "Performance",
+      event_label: "Page Load Time",
+      value: pageLoadTime, // in milliseconds
+    });
+  }
+}, []);
 
 
   return null; // No UI rendering
