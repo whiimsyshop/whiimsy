@@ -228,21 +228,7 @@ const AnalyticsTracker = () => {
     }
   }, []);
 
-  // 📱 Social Media Interaction (Facebook, Instagram, Twitter, etc.)
-  const socialMediaLinks = ["facebook", "instagram", "twitter", "linkedin"];
-  socialMediaLinks.forEach((platform) => {
-    if (target.classList.contains(platform) || target.href?.includes(platform)) {
-      window.gtag("event", "social_media_interaction", {
-        event_category: "User Interaction",
-        event_label: `${platform} - ${target.href}`,
-      });
-    }
-  });
-};
-
-document.addEventListener("click", handleClick);
-return () => document.removeEventListener("click", handleClick);
-}, [pathname]);
+  
 
   return null; // No UI rendering
 };
