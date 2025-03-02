@@ -112,17 +112,21 @@ const AnalyticsTracker = () => {
   }, []);
 
   // 📌 Track Time Spent on Page
-  useEffect(() => {
-    let startTime = Date.now();
-    return () => {
+useEffect(() => {
+  let startTime = Date.now();
+  
+  return () => {
+    if (typeof window !== "undefined" && window.gtag) { // ✅ Ensure gtag exists before calling
       let timeSpent = Math.round((Date.now() - startTime) / 1000);
       window.gtag("event", "time_on_page", {
         event_category: "User Engagement",
-        event_label: pathname,
+        event_label: pathname || "Unknown", // ✅ Handle potential null value
         value: timeSpent,
       });
-    };
-  }, [pathname]);
+    }
+  };
+}, [pathname]);
+
 
   // 📌 Track Exit Intent (detect when user moves cursor out of viewport)
   useEffect(() => {
