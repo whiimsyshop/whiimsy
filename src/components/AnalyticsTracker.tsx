@@ -192,6 +192,241 @@ useEffect(() => {
   return () => document.removeEventListener("click", handleClick);
 }, [pathname]);
 
+// Track User Demographics (Custom Dimensions)
+useEffect(() => {
+  if (window.gtag) {
+    // Example: Sending user demographic data
+    window.gtag('set', {
+      'user_id': 'USER_ID', // Example: Replace with actual user ID
+      'user_age': '25-34', // Example: Use actual age data
+      'user_gender': 'female', // Example: Use actual gender data
+    });
+  }
+}, []);
+
+// Track Session Duration
+useEffect(() => {
+  const startTime = Date.now();
+  return () => {
+    const duration = Math.round((Date.now() - startTime) / 1000); // time in seconds
+    if (window.gtag) {
+      window.gtag('event', 'session_duration', {
+        event_category: 'User Engagement',
+        event_label: pathname,
+        value: duration,
+      });
+    }
+  };
+}, [pathname]);
+
+
+// Track Exit Pages
+useEffect(() => {
+  const handleExit = () => {
+    if (window.gtag) {
+      window.gtag('event', 'exit_page', {
+        event_category: 'User Behavior',
+        event_label: pathname,
+      });
+    }
+  };
+
+  window.addEventListener('beforeunload', handleExit);
+  return () => window.removeEventListener('beforeunload', handleExit);
+}, [pathname]);
+
+
+// Track Visibility Change
+useEffect(() => {
+  const handleVisibilityChange = () => {
+    if (window.gtag) {
+      window.gtag('event', 'visibility_change', {
+        event_category: 'User Engagement',
+        event_label: document.visibilityState,
+      });
+    }
+  };
+
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+  return () => {
+    document.removeEventListener('visibilitychange', handleVisibilityChange);
+  };
+}, []);
+
+// Track Errors (404s, broken links)
+useEffect(() => {
+  const handleError = (event) => {
+    if (event.target instanceof HTMLImageElement && !event.target.complete) {
+      // Track broken image errors
+      window.gtag('event', 'error', {
+        event_category: 'Error Tracking',
+        event_label: `Broken image on ${pathname}`,
+      });
+    } else if (event.target instanceof HTMLLinkElement && event.target.href === null) {
+      // Track broken link errors
+      window.gtag('event', 'error', {
+        event_category: 'Error Tracking',
+        event_label: `Broken link on ${pathname}`,
+      });
+    }
+  };
+
+  window.addEventListener('error', handleError);
+  return () => window.removeEventListener('error', handleError);
+}, [pathname]);
+
+// Track Custom User Actions
+const handleCustomAction = (action) => {
+  if (window.gtag) {
+    window.gtag('event', action, {
+      event_category: 'User Interaction',
+      event_label: pathname,
+    });
+  }
+};
+
+// Example of calling the function when a custom action occurs
+handleCustomAction('add_to_comparison');
+
+
+// Track Form Fields Interactions
+useEffect(() => {
+  const formFields = document.querySelectorAll("input, textarea, select");
+
+  formFields.forEach((field) => {
+    field.addEventListener('focus', () => {
+      if (window.gtag) {
+        window.gtag('event', 'form_field_focus', {
+          event_category: 'User Interaction',
+          event_label: field.name,
+        });
+      }
+    });
+
+    field.addEventListener('input', () => {
+      if (window.gtag) {
+        window.gtag('event', 'form_field_input', {
+          event_category: 'User Interaction',
+          event_label: field.name,
+        });
+      }
+    });
+  });
+
+  return () => {
+    formFields.forEach((field) => {
+      field.removeEventListener('focus', () => {});
+      field.removeEventListener('input', () => {});
+    });
+  };
+}, []);
+
+
+// Track Page Load Time
+useEffect(() => {
+  const loadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
+  if (window.gtag) {
+    window.gtag('event', 'page_load_time', {
+      event_category: 'Performance',
+      event_label: pathname,
+      value: loadTime,
+    });
+  }
+}, [pathname]);
+
+
+// Track User Interactions with Navigation
+useEffect(() => {
+  const handleNavClick = (event) => {
+    if (event.target.closest('nav, .sidebar')) {
+      const target = event.target;
+      if (window.gtag) {
+        window.gtag('event', 'navigation_click', {
+          event_category: 'User Interaction',
+          event_label: target.tagName + ' - ' + target.textContent,
+        });
+      }
+    }
+  };
+
+  document.addEventListener('click', handleNavClick);
+  return () => document.removeEventListener('click', handleNavClick);
+}, []);
+
+// Track Multi-Device Usage
+useEffect(() => {
+  if (window.gtag) {
+    window.gtag('set', { 'user_id': 'USER_ID' }); // Ensure 'USER_ID' is unique per user
+  }
+}, []);
+
+
+// Track Internal Site Search
+useEffect(() => {
+  const searchInput = document.querySelector('[name="search"]');
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const searchQuery = searchInput.value;
+      if (window.gtag) {
+        window.gtag('event', 'search_query', {
+          event_category: 'User Engagement',
+          event_label: searchQuery,
+        });
+      }
+    });
+  }
+}, []);
+
+
+// Track Search Engine Referrals
+useEffect(() => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const utmSource = urlParams.get("utm_source");
+  const utmMedium = urlParams.get("utm_medium");
+  const utmCampaign = urlParams.get("utm_campaign");
+
+  if (utmSource && window.gtag) {
+    window.gtag('event', 'utm_tracking', {
+      event_category: 'Marketing',
+      event_label: `${utmSource} - ${utmCampaign}`,
+      medium: utmMedium,
+    });
+  }
+}, []);
+
+
+// Track Social Media Interactions
+useEffect(() => {
+  const socialButtons = document.querySelectorAll('.social-share-button');
+  socialButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const platform = button.dataset.platform; // e.g., "Facebook", "Twitter"
+      if (window.gtag) {
+        window.gtag('event', 'social_share', {
+          event_category: 'Social Media',
+          event_label: platform,
+        });
+      }
+    });
+  });
+}, []);
+
+
+//Track Notification Clicks (e.g., Push Notifications)
+useEffect(() => {
+  const notificationButtons = document.querySelectorAll('.push-notification');
+  notificationButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (window.gtag) {
+        window.gtag('event', 'push_notification_click', {
+          event_category: 'User Engagement',
+          event_label: 'Notification Clicked',
+        });
+      }
+    });
+  });
+}, []);
+
 
 
 
