@@ -166,7 +166,7 @@ useEffect(() => {
   const utmMedium = urlParams.get("utm_medium");
   const utmCampaign = urlParams.get("utm_campaign");
 
-  if (utmSource) {
+  if (utmSource && window.gtag) { // ✅ Ensure gtag exists before calling
     window.gtag("event", "utm_tracking", {
       event_category: "Marketing",
       event_label: `${utmSource} - ${utmCampaign}`,
@@ -174,6 +174,7 @@ useEffect(() => {
     });
   }
 }, []);
+
 
 // 📌 Capture Click Position (Heatmap Simulation)
 useEffect(() => {
