@@ -255,7 +255,7 @@ useEffect(() => {
 
 // Track Errors (404s, broken links)
 useEffect(() => {
-  const handleError = (event) => {
+  const handleError = (event: ErrorEvent) => {
     if (event.target instanceof HTMLImageElement && !event.target.complete) {
       // Track broken image errors
       window.gtag('event', 'error', {
@@ -270,6 +270,11 @@ useEffect(() => {
       });
     }
   };
+
+  window.addEventListener('error', handleError);
+  return () => window.removeEventListener('error', handleError);
+}, [pathname]);
+
 
   window.addEventListener('error', handleError);
   return () => window.removeEventListener('error', handleError);
