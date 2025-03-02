@@ -37,26 +37,29 @@ const AnalyticsTracker = () => {
   // 📌 Track Click Events
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      const targetText = target.innerText?.trim();
-      const targetId = target.id || target.className || "Unknown";
+      const target = event.target as HTMLElement | null; // Assert target as HTMLElement or null
 
-      // 🖱️ General Click Tracking
-      sendGtagEvent("User Interaction", "click", `${target.tagName} - ${targetId}`);
+      if (target) {
+        const targetText = target.innerText?.trim();
+        const targetId = target.id || target.className || "Unknown";
 
-      // 🛍️ "Shop Now" Button Click
-      if (targetText === "Shop Now" || target.classList.contains("shop-now-button")) {
-        sendGtagEvent("E-commerce", "shop_now_click", "Shop Now Button", undefined);
-      }
+        // 🖱️ General Click Tracking
+        sendGtagEvent("User Interaction", "click", `${target.tagName} - ${targetId}`);
 
-      // 🛒 "Add to Cart" Button Click
-      if (target.classList.contains("add-to-cart-button")) {
-        sendGtagEvent("E-commerce", "add_to_cart", "Add to Cart", undefined);
-      }
+        // 🛍️ "Shop Now" Button Click
+        if (targetText === "Shop Now" || target.classList.contains("shop-now-button")) {
+          sendGtagEvent("E-commerce", "shop_now_click", "Shop Now Button", undefined);
+        }
 
-      // ❤️ "Wishlist" Button Click
-      if (target.classList.contains("wishlist-button")) {
-        sendGtagEvent("E-commerce", "add_to_wishlist", "Wishlist", undefined);
+        // 🛒 "Add to Cart" Button Click
+        if (target.classList.contains("add-to-cart-button")) {
+          sendGtagEvent("E-commerce", "add_to_cart", "Add to Cart", undefined);
+        }
+
+        // ❤️ "Wishlist" Button Click
+        if (target.classList.contains("wishlist-button")) {
+          sendGtagEvent("E-commerce", "add_to_wishlist", "Wishlist", undefined);
+        }
       }
     };
 
@@ -249,8 +252,10 @@ const AnalyticsTracker = () => {
   // Track User Interactions with Navigation
   useEffect(() => {
     const handleNavClick = (event: MouseEvent) => {
-      if (event.target.closest('nav, .sidebar') && pathname) {
-        const target = event.target as HTMLElement;
+      const target = event.target as HTMLElement | null; // Assert target as HTMLElement or null
+
+      // Check if the target is within the specified elements (nav or sidebar)
+      if (target?.closest('nav, .sidebar') && pathname) {
         sendGtagEvent('User Interaction', 'navigation_click', `${target.tagName} - ${target.textContent}`);
       }
     };
