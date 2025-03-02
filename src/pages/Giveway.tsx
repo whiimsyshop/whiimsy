@@ -18,6 +18,8 @@ const Giveway: React.FC = () => {
                                     alt="GiveAway"
                                     layout="fill" // Use `layout` instead of `fill` for Next.js Image component
                                     className="mt-4 tablet:mt-6 laptop:mt-8"
+                                    priority={true} 
+                                    loading="eager"
                                 />
                         </div>
                         
