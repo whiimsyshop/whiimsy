@@ -129,18 +129,64 @@ useEffect(() => {
 
 
   // 📌 Track Exit Intent (detect when user moves cursor out of viewport)
-  useEffect(() => {
-    const handleExitIntent = (event: MouseEvent) => {
-      if (event.clientY < 10) {
-        window.gtag("event", "exit_intent", {
-          event_category: "User Behavior",
-          event_label: pathname,
-        });
-      }
-    };
-    document.addEventListener("mouseleave", handleExitIntent);
-    return () => document.removeEventListener("mouseleave", handleExitIntent);
-  }, []);
+useEffect(() => {
+  const handleExitIntent = (event: MouseEvent) => {
+    if (typeof window !== "undefined" && window.gtag && event.clientY < 10) { // ✅ Ensure gtag exists
+      window.gtag("event", "exit_intent", {
+        event_category: "User Behavior",
+        event_label: pathname || "Unknown", // ✅ Handle potential null value
+      });
+    }
+  };
+
+  document.addEventListener("mouseleave", handleExitIntent);
+  return () => document.removeEventListener("mouseleave", handleExitIntent);
+}, [pathname]);
+
+// 📌 Track Form Submissions (e.g., Newsletter, Contact)
+useEffect(() => {
+  const forms = document.querySelectorAll("form");
+  forms.forEach((form) => {
+    form.addEventListener("submit", () => {
+      window.gtag("event", "form_submission", {
+        event_category: "User Engagement",
+        event_label: "Form Submitted",
+        page_path: pathname,
+      });
+    });
+  });
+}, [pathname]);
+
+ // 📌 Track UTM Parameters (for marketing campaigns)
+ useEffect(() => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const utmSource = urlParams.get("utm_source");
+  const utmMedium = urlParams.get("utm_medium");
+  const utmCampaign = urlParams.get("utm_campaign");
+
+  if (utmSource) {
+    window.gtag("event", "utm_tracking", {
+      event_category: "Marketing",
+      event_label: `${utmSource} - ${utmCampaign}`,
+      medium: utmMedium,
+    });
+  }
+}, []);
+
+// 📌 Capture Click Position (Heatmap Simulation)
+useEffect(() => {
+  const handleClick = (event: MouseEvent) => {
+    window.gtag("event", "click_position", {
+      event_category: "User Interaction",
+      event_label: `X: ${event.clientX}, Y: ${event.clientY}`,
+      page_path: pathname,
+    });
+  };
+  document.addEventListener("click", handleClick);
+  return () => document.removeEventListener("click", handleClick);
+}, [pathname]);
+
+
 
   return null; // No UI rendering
 };
