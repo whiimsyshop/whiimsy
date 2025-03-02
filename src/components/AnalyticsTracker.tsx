@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { GA_TRACKING_ID } from "../pages/config/analytics"; // Import GA ID
 
 declare global {
   interface Window {
@@ -10,17 +9,23 @@ declare global {
   }
 }
 
-const useAnalytics = () => {
+const GA_TRACKING_ID = "G-JGVYE0JRWB"; // Directly define GA ID
+
+const AnalyticsTracker = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    window.gtag?.("event", "page_view", { page_path: pathname });
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "page_view", { page_path: pathname });
+    }
   }, [pathname]);
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
+      if (!window.gtag) return;
+
       const target = event.target as HTMLElement;
-      window.gtag?.("event", "click", {
+      window.gtag("event", "click", {
         event_category: "User Interaction",
         event_label: target.tagName + " - " + (target.id || target.className || "Unknown"),
       });
@@ -34,8 +39,10 @@ const useAnalytics = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (!window.gtag) return;
+
       const scrollDepth = ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight) * 100;
-      window.gtag?.("event", "scroll", {
+      window.gtag("event", "scroll", {
         event_category: "User Interaction",
         event_label: "Scroll Depth",
         value: Math.round(scrollDepth),
@@ -50,7 +57,9 @@ const useAnalytics = () => {
 
   useEffect(() => {
     const handleVisibilityChange = () => {
-      window.gtag?.("event", "visibility_change", {
+      if (!window.gtag) return;
+
+      window.gtag("event", "visibility_change", {
         event_category: "User Engagement",
         event_label: document.visibilityState,
       });
@@ -64,7 +73,9 @@ const useAnalytics = () => {
 
   useEffect(() => {
     const handleDeviceInfo = () => {
-      window.gtag?.("event", "device_info", {
+      if (!window.gtag) return;
+
+      window.gtag("event", "device_info", {
         event_category: "User Info",
         event_label: navigator.userAgent,
         screen_width: window.screen.width,
@@ -75,6 +86,8 @@ const useAnalytics = () => {
 
     handleDeviceInfo();
   }, []);
+
+  return null; // Component does not render anything
 };
 
-export default useAnalytics;
+export default AnalyticsTracker;
