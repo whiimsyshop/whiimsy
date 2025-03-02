@@ -11,7 +11,7 @@ const ContactForm = dynamic(() => import("../components/ContactForm"), { ssr: fa
 const ContactPage = () => {
   return (
     <section className="about-main laptop:w-full">
-      <div className="w-full">
+      <div className="w-full pt-[80px]">
         <HeaderBox title="Contact Us" />
       </div>
       <div className="mt-10 mb-10 flex flex-col gap-8 laptop:flex-row laptop:justify-center laptop:items-center tablet:px-0 laptop:px-20 px-6 md:px-6 ml-10 mr-10">

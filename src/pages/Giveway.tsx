@@ -7,7 +7,7 @@ import Heart from '@/components/Heart';
 
 const Giveway: React.FC = () => {
     return (
-        <main className="about-main laptop:px-0 laptop:w-full flex flex-col justify-center items-center">
+        <main className="about-main laptop:px-0 laptop:w-full flex flex-col justify-center items-center pt-[80px]">
             <div className="w-full">
                 <HeaderBox title="Giveway" />
             </div>

@@ -24,7 +24,7 @@ const FreeCandle: React.FC = () => {
   };
 
   return (
-    <div className="flex-col">
+    <div className="flex-col pt-[80px]">
       <Banner />
       <HeaderBox title="Free Candle" />
       <section

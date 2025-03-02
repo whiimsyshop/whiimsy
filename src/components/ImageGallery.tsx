@@ -41,7 +41,7 @@ const ImageGallery = () => {
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full pt-[60px]">
         <HeaderBox title="Gallery" />
       </div>
 

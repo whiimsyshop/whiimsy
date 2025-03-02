@@ -80,8 +80,8 @@ export default function RootLayout({
         className={`${kantumruyPro.variable} ${kaiseiTokumin.variable} ${inknutAntiqua.variable}`}
       >
         <Navbar />
-        <AnalyticsTracker />
         {children}
+        <AnalyticsTracker />
         <ClientFooter />
         <WhatsAppButton />
         <BackToTop />

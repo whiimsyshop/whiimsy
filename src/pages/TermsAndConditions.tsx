@@ -4,7 +4,7 @@ import HeaderBox from "@/components/HeaderBox";
 const Term_Condition = () => {
   return (
     <section className="w-full laptop:justify-center laptop:items-center">
-      <div className="w-full">
+      <div className="w-full pt-[80px]">
           <HeaderBox title="Website Terms Of Use" />
         </div>
       <div className="px-3 pt-5 pb-10 tablet:flex tablet:justify-center tablet:items-center">

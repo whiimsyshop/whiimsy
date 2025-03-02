@@ -3,8 +3,8 @@ import HeaderBox from "@/components/HeaderBox";
 
 const ReturnShipping_Condition = () => {
   return (
-    <section className="w-full laptop:justify-center laptop:items-center">
-      <div className="w-full">
+    <section className="w-full laptop:justify-center laptop:items-center ">
+      <div className="w-full pt-[80px]">
           <HeaderBox title="Return and Shipping Policy" />
         </div>
       <div className="px-3 pt-5 pb-10 tablet:flex tablet:justify-center tablet:items-center">

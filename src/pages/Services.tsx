@@ -46,7 +46,7 @@ const ServicesPage: React.FC = () => {
   
 
   return (
-    <div>
+    <div className="pt-[80px]">
       <HeaderBox title="Services" />
       <div className="flex flex-wrap justify-center gap-4 mt-8 sticky top-0 mx-2 my-5 lg:mx-32 lg:py-4 rounded-xl bg-[#f5dcdc] z-10 mb-8 px-4 py-4"
        style={{ position: "sticky", top: `${navbarHeight}px` }}

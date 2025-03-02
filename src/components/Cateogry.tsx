@@ -16,7 +16,7 @@ const categories =
 
 const CategorySection = () => {
     return (
-      <div className="w-full py-6">
+      <div className="w-full py-6 pt-[80px]">
         <div className="flex overflow-x-auto space-x-4 px-4 md:justify-center scrollbar-hide">
           {categories.map((category, index) => (
             <a

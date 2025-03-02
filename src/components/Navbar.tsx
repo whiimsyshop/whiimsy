@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Link from 'next/link';
+import Link from "next/link";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -17,6 +17,7 @@ const navdata = [
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   // Close menu when clicking outside
@@ -31,9 +32,19 @@ const Navbar: React.FC = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Handle navbar background on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#165B33] shadow-md">
-      <header className="flex items-center justify-between px-6 py-4 tablet:px-10 laptop:px-[8rem]">
+    <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-[#165B33] shadow-md" : "bg-[#165B33]"}`} style={{ height: "60px" }}>
+      <header className="flex items-center justify-between px-6 py-3 tablet:px-10 laptop:px-[8rem] h-full">
         {/* Logo */}
         <div className="logo-name flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3">
@@ -43,13 +54,12 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden laptop:flex gap-6">
+        <ul className="hidden laptop:flex gap-6 items-center">
           {navdata.map((item, index) => (
             <li key={index} className="text-left">
               <Link
                 href={item.link}
-                className={`text-white hover:text-gray-300 
-                  ${item.mainHeading === "SHOP NOW" ? "bg-[#F7CAC9] px-4 py-2 rounded-full" : ""}`}
+                className={`text-white hover:text-gray-300 ${item.mainHeading === "SHOP NOW" ? "bg-[#F7CAC9] px-4 py-2 rounded-full" : ""}`}
               >
                 {item.mainHeading}
               </Link>
@@ -68,13 +78,12 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Sidebar Navigation */}
       <div
-        className={`fixed top-0 right-0 bg-[#165B33] w-[60%] max-w-[280px] shadow-lg transform transition-transform duration-300 
-        ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 bg-[#165B33] w-[60%] max-w-[280px] shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div
           ref={menuRef}
           className="flex flex-col p-4 bg-[#165B33] shadow-lg"
-          style={{ height: "auto", minHeight: "40vh", maxHeight: "80vh" }} // Adjusts height dynamically
+          style={{ height: "auto", minHeight: "40vh", maxHeight: "80vh" }}
         >
           {/* Close Button */}
           <button
