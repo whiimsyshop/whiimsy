@@ -148,17 +148,19 @@ useEffect(() => {
   const forms = document.querySelectorAll("form");
   forms.forEach((form) => {
     form.addEventListener("submit", () => {
-      window.gtag("event", "form_submission", {
-        event_category: "User Engagement",
-        event_label: "Form Submitted",
-        page_path: pathname,
-      });
+      if (window.gtag) {
+        window.gtag("event", "form_submission", {
+          event_category: "User Engagement",
+          event_label: "Form Submitted",
+          page_path: pathname,
+        });
+      }
     });
   });
 }, [pathname]);
 
- // 📌 Track UTM Parameters (for marketing campaigns)
- useEffect(() => {
+// 📌 Track UTM Parameters (for marketing campaigns)
+useEffect(() => {
   const urlParams = new URLSearchParams(window.location.search);
   const utmSource = urlParams.get("utm_source");
   const utmMedium = urlParams.get("utm_medium");
