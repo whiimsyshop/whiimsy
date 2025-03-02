@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";  // Import useRouter instead of usePathname
 
 declare global {
