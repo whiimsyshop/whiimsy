@@ -57,6 +57,21 @@ export default function RootLayout({
         <meta name="author" content="Mohit Singh" />
         <meta name="robots" content="index, follow" />
 
+        {/* Microsoft Clarity */}
+        <Script
+        id="my-script-1"
+        strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y) {
+                c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments) };
+                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+              })(window, document, "clarity", "script", "qhwsb4z81l");
+            `,
+          }}
+        />
+
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"

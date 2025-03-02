@@ -9,34 +9,84 @@ declare global {
   }
 }
 
-const GA_TRACKING_ID = "G-JGVYE0JRWB"; // Directly define GA ID
+const GA_TRACKING_ID = "G-JGVYE0JRWB"; // Define Google Analytics Tracking ID
 
 const AnalyticsTracker = () => {
   const pathname = usePathname();
 
+  // 📌 Track Page Views
   useEffect(() => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "page_view", { page_path: pathname });
     }
   }, [pathname]);
 
+  // 📌 Track Click Events (including "Shop Now", "Add to Cart", "Wishlist", etc.)
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       if (!window.gtag) return;
 
       const target = event.target as HTMLElement;
+      const targetText = target.innerText?.trim();
+      const targetId = target.id || target.className || "Unknown";
+
+      // 🖱️ General Click Tracking
       window.gtag("event", "click", {
         event_category: "User Interaction",
-        event_label: target.tagName + " - " + (target.id || target.className || "Unknown"),
+        event_label: target.tagName + " - " + targetId,
       });
+
+      // 🛍️ "Shop Now" Button Click
+      if (targetText === "Shop Now" || target.classList.contains("shop-now-button")) {
+        window.gtag("event", "shop_now_click", {
+          event_category: "E-commerce",
+          event_label: "Shop Now Button",
+          page_path: pathname,
+        });
+      }
+
+      // 🛒 "Add to Cart" Button Click
+      if (targetText === "Add to Cart" || target.classList.contains("add-to-cart-button")) {
+        window.gtag("event", "add_to_cart", {
+          event_category: "E-commerce",
+          event_label: "Add to Cart",
+          product_name: target.dataset.productName || "Unknown",
+        });
+      }
+
+      // ❤️ "Wishlist" Button Click
+      if (targetText === "Wishlist" || target.classList.contains("wishlist-button")) {
+        window.gtag("event", "add_to_wishlist", {
+          event_category: "E-commerce",
+          event_label: "Wishlist",
+          product_name: target.dataset.productName || "Unknown",
+        });
+      }
+
+      // 📸 Promo Banner Click
+      if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
+        window.gtag("event", "banner_click", {
+          event_category: "Promotion",
+          event_label: target.alt || "Promo Banner",
+        });
+      }
+
+      // ▶️ Video Play (for embedded YouTube videos)
+      if (target.tagName === "IFRAME" && target.src.includes("youtube.com")) {
+        window.gtag("event", "video_play", {
+          event_category: "Media Engagement",
+          event_label: target.src,
+        });
+      }
     };
 
     document.addEventListener("click", handleClick);
     return () => {
       document.removeEventListener("click", handleClick);
     };
-  }, []);
+  }, [pathname]);
 
+  // 📌 Track Scroll Depth
   useEffect(() => {
     const handleScroll = () => {
       if (!window.gtag) return;
@@ -55,6 +105,7 @@ const AnalyticsTracker = () => {
     };
   }, []);
 
+  // 📌 Track Visibility Change (when user switches tabs)
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (!window.gtag) return;
@@ -71,21 +122,85 @@ const AnalyticsTracker = () => {
     };
   }, []);
 
+  // 📌 Track Time Spent on Page
   useEffect(() => {
-    const handleDeviceInfo = () => {
-      if (!window.gtag) return;
-
-      window.gtag("event", "device_info", {
-        event_category: "User Info",
-        event_label: navigator.userAgent,
-        screen_width: window.screen.width,
-        screen_height: window.screen.height,
-        language: navigator.language,
+    let startTime = Date.now();
+    return () => {
+      let timeSpent = Math.round((Date.now() - startTime) / 1000);
+      window.gtag("event", "time_on_page", {
+        event_category: "User Engagement",
+        event_label: pathname,
+        value: timeSpent,
       });
     };
+  }, [pathname]);
 
-    handleDeviceInfo();
+  // 📌 Track Exit Intent (detect when user moves cursor out of viewport)
+  useEffect(() => {
+    const handleExitIntent = (event: MouseEvent) => {
+      if (event.clientY < 10) {
+        window.gtag("event", "exit_intent", {
+          event_category: "User Behavior",
+          event_label: pathname,
+        });
+      }
+    };
+    document.addEventListener("mouseleave", handleExitIntent);
+    return () => document.removeEventListener("mouseleave", handleExitIntent);
   }, []);
+
+  // 📌 Track Form Submissions (e.g., Newsletter, Contact)
+  useEffect(() => {
+    const forms = document.querySelectorAll("form");
+    forms.forEach((form) => {
+      form.addEventListener("submit", () => {
+        window.gtag("event", "form_submission", {
+          event_category: "User Engagement",
+          event_label: "Form Submitted",
+          page_path: pathname,
+        });
+      });
+    });
+  }, [pathname]);
+
+  // 📌 Track Product Page Views
+  useEffect(() => {
+    if (pathname.includes("/product/")) {
+      window.gtag("event", "view_product", {
+        event_category: "E-commerce",
+        event_label: pathname,
+      });
+    }
+  }, [pathname]);
+
+  // 📌 Track UTM Parameters (for marketing campaigns)
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get("utm_source");
+    const utmMedium = urlParams.get("utm_medium");
+    const utmCampaign = urlParams.get("utm_campaign");
+
+    if (utmSource) {
+      window.gtag("event", "utm_tracking", {
+        event_category: "Marketing",
+        event_label: `${utmSource} - ${utmCampaign}`,
+        medium: utmMedium,
+      });
+    }
+  }, []);
+
+  // 📌 Capture Click Position (Heatmap Simulation)
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      window.gtag("event", "click_position", {
+        event_category: "User Interaction",
+        event_label: `X: ${event.clientX}, Y: ${event.clientY}`,
+        page_path: pathname,
+      });
+    };
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [pathname]);
 
   return null; // Component does not render anything
 };
