@@ -228,20 +228,21 @@ const AnalyticsTracker = () => {
     }
   }, []);
 
-  // 📌 Track User Demographics (example for logged-in user)
-  useEffect(() => {
-    const user = {
-      gender: "female", // Example, replace with actual data from your system
-      age: 28, // Example, replace with actual data from your system
-    };
-
-    if (window.gtag) {
-      window.gtag("event", "user_demographics", {
-        event_category: "User Information",
-        event_label: `Gender: ${user.gender}, Age: ${user.age}`,
+  // 📱 Social Media Interaction (Facebook, Instagram, Twitter, etc.)
+  const socialMediaLinks = ["facebook", "instagram", "twitter", "linkedin"];
+  socialMediaLinks.forEach((platform) => {
+    if (target.classList.contains(platform) || target.href?.includes(platform)) {
+      window.gtag("event", "social_media_interaction", {
+        event_category: "User Interaction",
+        event_label: `${platform} - ${target.href}`,
       });
     }
-  }, []);
+  });
+};
+
+document.addEventListener("click", handleClick);
+return () => document.removeEventListener("click", handleClick);
+}, [pathname]);
 
   return null; // No UI rendering
 };
