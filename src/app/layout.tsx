@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
-import AnalyticsTracker from "../components/AnalyticsTracker";
 import WhatsAppButton from "../components/WhatsAppButton";
 import BackToTop from "../components/BackToTop";
 
@@ -96,7 +95,6 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <AnalyticsTracker />
         <ClientFooter />
         <WhatsAppButton />
         <BackToTop />
