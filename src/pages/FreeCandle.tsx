@@ -65,7 +65,7 @@ const FreeCandle: React.FC = () => {
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Workshop" style={{ objectFit: "cover", objectPosition: "center" }} />
+            <Image src="/freecandle/FreeCandle.webp" fill alt="Workshop" style={{ objectFit: "cover", objectPosition: "center" }} />
           </div>
         </div>
       </section>

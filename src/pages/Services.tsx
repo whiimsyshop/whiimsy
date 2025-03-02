@@ -103,9 +103,7 @@ const ServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold mb-4">Candle Making Workshops</span>
           <p className="text-justify text-xl">
-            Looking for a fun time with family, friends, colleagues, and students? We offer candle making workshops. It
-            can be a simple class to take home your own creation or we do offer classes that are targeted toward STEM,
-            team building, and entrepreneurship.
+          Ready to get your hands waxy and your creativity flowing? Join our fun, hands-on workshops where you’ll pour, mix, and craft your own dreamy candles—perfect for a chill hangout, a creative escape, or just an excuse to play with pretty scents!
           </p>
           <p className="text-justify text-xl mt-6">Please click on the button below to find out more information.</p>
           <Link
@@ -133,13 +131,7 @@ const ServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Recycle Program</span>
           <p className="text-justify text-xl">
-            Yes, you heard it right. You no longer have to throw your empty candle jars in the trash. You can bring them
-            to us and we will make sure they are put to good use.
-          </p>
-          <p className="text-justify text-xl mt-4">
-            A discount will be applied to your next purchase for each jar and lid that you bring that is in good
-            condition. For example, if you bring us a jar and lid then you will get $2.50 off your next purchase. Yes,
-            it can be the same day you bring them in.
+          Contribute to sustainability by bringing in your empty candle jars. Whiimsy repurposes them, and as a token of appreciation, offers a discount on your next purchase for each jar and lid returned in good condition.
           </p>
           <p className="text-justify text-xl mt-6">Schedule a drop off time! See you soon..</p>
           <Link
@@ -167,8 +159,7 @@ const ServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold mb-4">Corporates</span>
           <p className="text-justify text-xl">
-            An opportunity to gift your customers and colleagues an exclusive product. Special attention is paid
-            to the client's design, philosophy, budget and requirements.
+          Customize exclusive scented products tailored to your company's design, philosophy, budget, and requirements, perfect for gifting customers and colleagues.
           </p>
           <p className="text-justify text-xl mt-6">Please click on the button below to find out more information.</p>
           <Link
@@ -196,8 +187,7 @@ const ServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Collaborations</span>
           <p className="text-justify text-xl">
-            Unique collaborations with brands that resonate with our design aesthetic. Handcrafted products, designed to
-            perfection through creative associations.
+          Partner with Whiimsy for unique collaborations that align with their design aesthetic, resulting in handcrafted products perfected through creative associations.
           </p>
           <p className="text-justify text-xl mt-6">Schedule a Meeting! See you soon..</p>
           <Link
@@ -225,10 +215,8 @@ const ServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Fundraising - Charitable Donation</span>
           <p className="text-justify text-xl">
-            Partner with Whiimsy or host a charitable fundraiser for your group or organization to help raise some
-            serious cash and make a real impact. Plan your fundraiser with us and let’s have some fun! Fill out the form
-            and we will contact you within 24-48 hours to schedule your fundraiser. Make sure to come with your goal in
-            mind.
+          Host charitable fundraisers in partnership with Whiimsy to raise funds for your group or organization, making a tangible impact while enjoying the process.
+          Fill out the form and we will contact you within 24-48 hours to schedule your fundraiser. Make sure to come with your goal in mind.
           </p>
           <p className="text-justify text-xl mt-6">Please click on the button below to submit a request.</p>
           <Link
@@ -256,8 +244,7 @@ const ServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col">
           <span className="text-3xl font-semibold block mb-4">Wholesale - Private Label</span>
           <p className="text-justify text-xl">
-            Allow us to bring your vision to life with a great collection to any brand or a great gift for your wedding
-            party and/or corporate employee appreciation.
+          Bring your vision to life with custom candle collections suitable for brands, weddings, or corporate employee appreciation gifts.
           </p>
           <p className="text-justify text-xl mt-6">Please click on the button below to start your order request.</p>
           <Link
@@ -290,7 +277,7 @@ const ServicesPage: React.FC = () => {
           <ul className="list-decimal pl-5 text-xl mt-4 leading-8">
             <li>Provide request within 30 days of deadline.</li>
             <li>Upon agreement, provide social media blast on organization platform (Facebook, Instagram, LinkedIn)</li>
-            <li>Made a purchase from Ladie Lex within the past 90 days of request</li>
+            <li>Made a purchase from Whiimsy within the past 90 days of request</li>
           </ul>
           <p className="text-justify text-xl mt-6">We look forward to working with you.</p>
           <Link
