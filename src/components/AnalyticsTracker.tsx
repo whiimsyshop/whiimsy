@@ -1,201 +1,117 @@
-"use client";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import ReactGA from 'react-ga'; // For Google Analytics or GTM
+import Cookies from 'js-cookie'; // For UTM Tracking
+import { useLocalStorage } from 'react-use'; // Optional for time spent tracking
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-
-declare global {
-  interface Window {
-    gtag?: (...args: any[]) => void;
-  }
-}
+// Optional heatmap tracking: you may use a different library if 'react-heatmap' isn't compatible
+// import heatmap from 'react-heatmap'; 
 
 const AnalyticsTracker = () => {
-  const pathname = usePathname();
+  const [startTime, setStartTime] = useState(Date.now());
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const router = useRouter();
+  const [utmParams, setUtmParams] = useState<any>({});
 
-  // 📌 Track Page Views
   useEffect(() => {
-    if (!window.gtag || !pathname) return;
-    window.gtag("event", "page_view", { page_path: pathname });
-  }, [pathname]);
+    // Initialize Google Analytics or GTM
+    ReactGA.initialize('YOUR_GOOGLE_ANALYTICS_ID'); // Replace with your Google Analytics ID
+    ReactGA.pageview(window.location.pathname + window.location.search);
 
-  // 📌 Track Click Events
-  useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
-      if (!window.gtag) return;
-      const target = event.target as HTMLElement;
-      const targetText = target.innerText?.trim();
-      const targetId = target.id || target.className || "Unknown";
+    // Get UTM Parameters from the URL or cookies
+    const utms = getUTMParameters();
+    setUtmParams(utms);
 
-      // 🖱️ General Click Tracking
-      window.gtag("event", "click", {
-        event_category: "User Interaction",
-        event_label: `${target.tagName} - ${targetId}`,
-      });
+    // Track initial page view
+    trackPageView();
 
-      // 🛍️ "Shop Now" Button Click
-      if (targetText === "Shop Now" || target.classList.contains("shop-now-button")) {
-        window.gtag("event", "shop_now_click", {
-          event_category: "E-commerce",
-          event_label: "Shop Now Button",
-          page_path: pathname,
-        });
-      }
-
-      // 🛒 "Add to Cart" Button Click
-      if (target.classList.contains("add-to-cart-button")) {
-        window.gtag("event", "add_to_cart", {
-          event_category: "E-commerce",
-          event_label: "Add to Cart",
-          product_name: target.dataset.productName || "Unknown",
-        });
-      }
-
-      // ❤️ "Wishlist" Button Click
-      if (target.classList.contains("wishlist-button")) {
-        window.gtag("event", "add_to_wishlist", {
-          event_category: "E-commerce",
-          event_label: "Wishlist",
-          product_name: target.dataset.productName || "Unknown",
-        });
-      }
-    };
-
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, [pathname]);
-
-  // 📌 Track Product Page Views (Fixed)
-  useEffect(() => {
-    if (!window.gtag || !pathname) return;
-    if (pathname.includes("/product/")) {
-      window.gtag("event", "view_product", {
-        event_category: "E-commerce",
-        event_label: pathname,
-      });
-    }
-  }, [pathname]);
-
-  // 📌 Track Scroll Depth
-  useEffect(() => {
+    // Set up scroll tracking
     const handleScroll = () => {
-      if (!window.gtag) return;
-
-      const scrollDepth = ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight) * 100;
-      window.gtag("event", "scroll", {
-        event_category: "User Interaction",
-        event_label: "Scroll Depth",
-        value: Math.round(scrollDepth),
-      });
+      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      setScrollPosition(scrollPercentage);
+      trackScroll(scrollPercentage);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+
+    // Track time spent
+    const timer = setInterval(() => {
+      const timeSpent = Date.now() - startTime;
+      trackTimeSpent(timeSpent);
+    }, 1000); // Track every second
+
+    // Clean up event listeners on component unmount
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(timer);
     };
   }, []);
 
-  // 📌 Track Visibility Change (when user switches tabs)
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (!window.gtag) return;
-
-      window.gtag("event", "visibility_change", {
-        event_category: "User Engagement",
-        event_label: document.visibilityState,
-      });
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, []);
-
-  // 📌 Track Time Spent on Page
-useEffect(() => {
-  let startTime = Date.now();
-  
-  return () => {
-    if (typeof window !== "undefined" && window.gtag) { // ✅ Ensure gtag exists before calling
-      let timeSpent = Math.round((Date.now() - startTime) / 1000);
-      window.gtag("event", "time_on_page", {
-        event_category: "User Engagement",
-        event_label: pathname || "Unknown", // ✅ Handle potential null value
-        value: timeSpent,
-      });
-    }
-  };
-}, [pathname]);
-
-
-  // 📌 Track Exit Intent (detect when user moves cursor out of viewport)
-useEffect(() => {
-  const handleExitIntent = (event: MouseEvent) => {
-    if (typeof window !== "undefined" && window.gtag && event.clientY < 10) { // ✅ Ensure gtag exists
-      window.gtag("event", "exit_intent", {
-        event_category: "User Behavior",
-        event_label: pathname || "Unknown", // ✅ Handle potential null value
-      });
-    }
-  };
-
-  document.addEventListener("mouseleave", handleExitIntent);
-  return () => document.removeEventListener("mouseleave", handleExitIntent);
-}, [pathname]);
-
-// 📌 Track Form Submissions (e.g., Newsletter, Contact)
-useEffect(() => {
-  const forms = document.querySelectorAll("form");
-  forms.forEach((form) => {
-    form.addEventListener("submit", () => {
-      if (window.gtag) {
-        window.gtag("event", "form_submission", {
-          event_category: "User Engagement",
-          event_label: "Form Submitted",
-          page_path: pathname,
-        });
+  // Capture UTM parameters
+  const getUTMParameters = () => {
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    const params: any = {};
+    
+    // Capture UTM params from the URL query
+    utmParams.forEach((param) => {
+      if (router.query[param]) {
+        params[param] = router.query[param];
+        // Store UTM in cookies to persist across pages
+        Cookies.set(param, router.query[param], { expires: 30 }); // Set expiry to 30 days
+      } else {
+        const cookieValue = Cookies.get(param);
+        if (cookieValue) {
+          params[param] = cookieValue;
+        }
       }
     });
-  });
-}, [pathname]);
 
-// 📌 Track UTM Parameters (for marketing campaigns)
-useEffect(() => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const utmSource = urlParams.get("utm_source");
-  const utmMedium = urlParams.get("utm_medium");
-  const utmCampaign = urlParams.get("utm_campaign");
-
-  if (utmSource && window.gtag) { // ✅ Ensure gtag exists before calling
-    window.gtag("event", "utm_tracking", {
-      event_category: "Marketing",
-      event_label: `${utmSource} - ${utmCampaign}`,
-      medium: utmMedium,
-    });
-  }
-}, []);
-
-
-// 📌 Capture Click Position (Heatmap Simulation)
-useEffect(() => {
-  const handleClick = (event: MouseEvent) => {
-    if (window.gtag) { // ✅ Ensure gtag exists before calling
-      window.gtag("event", "click_position", {
-        event_category: "User Interaction",
-        event_label: `X: ${event.clientX}, Y: ${event.clientY}`,
-        page_path: pathname,
-      });
-    }
+    return params;
   };
-  
-  document.addEventListener("click", handleClick);
-  return () => document.removeEventListener("click", handleClick);
-}, [pathname]);
 
+  const trackPageView = () => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    console.log('Pageview tracked:', window.location.pathname);
+  };
 
+  const trackScroll = (percentage: number) => {
+    // Replace with your own analytics service
+    console.log(`Scrolled: ${percentage}%`);
+    ReactGA.event({
+      category: 'Scroll',
+      action: 'Scroll Depth',
+      label: `${percentage}%`
+    });
+  };
 
+  const trackTimeSpent = (time: number) => {
+    // Replace with your own analytics service
+    console.log(`Time spent: ${Math.floor(time / 1000)} seconds`);
+    ReactGA.event({
+      category: 'Time',
+      action: 'Time Spent',
+      label: `${Math.floor(time / 1000)} seconds`
+    });
+  };
 
-  return null; // No UI rendering
+  const trackUTMParameters = () => {
+    console.log('UTM Parameters:', utmParams);
+    ReactGA.event({
+      category: 'UTM',
+      action: 'UTM Parameters',
+      label: JSON.stringify(utmParams)
+    });
+  };
+
+  return (
+    <div>
+      {/* Optionally, insert heatmap visualization */}
+      {/* You can customize the heatmap tracking here */}
+      <div style={{ position: 'absolute', top: '50%', left: '50%', zIndex: 999 }}>
+        <p>Scroll Position: {Math.round(scrollPosition)}%</p>
+      </div>
+    </div>
+  );
 };
 
 export default AnalyticsTracker;
