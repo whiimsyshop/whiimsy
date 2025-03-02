@@ -101,7 +101,7 @@ const AnalyticsTracker = () => {
   useEffect(() => {
     let startTime = Date.now();
     return () => {
-      if (typeof window !== "undefined" && window.gtag) {
+      if (typeof window !== "undefined" && window.gtag && pathname) {
         let timeSpent = Math.round((Date.now() - startTime) / 1000);
         sendGtagEvent("User Engagement", "time_on_page", pathname, timeSpent);
       }
@@ -111,7 +111,7 @@ const AnalyticsTracker = () => {
   // 📌 Track Exit Intent (detect when user moves cursor out of viewport)
   useEffect(() => {
     const handleExitIntent = (event: MouseEvent) => {
-      if (typeof window !== "undefined" && window.gtag && event.clientY < 10) {
+      if (typeof window !== "undefined" && window.gtag && event.clientY < 10 && pathname) {
         sendGtagEvent("User Behavior", "exit_intent", pathname);
       }
     };
@@ -168,14 +168,18 @@ const AnalyticsTracker = () => {
     const startTime = Date.now();
     return () => {
       const duration = Math.round((Date.now() - startTime) / 1000); // time in seconds
-      sendGtagEvent('User Engagement', 'session_duration', pathname, duration);
+      if (pathname) {
+        sendGtagEvent('User Engagement', 'session_duration', pathname, duration);
+      }
     };
   }, [pathname]);
 
   // Track Exit Pages
   useEffect(() => {
     const handleExit = () => {
-      sendGtagEvent('User Behavior', 'exit_page', pathname);
+      if (pathname) {
+        sendGtagEvent('User Behavior', 'exit_page', pathname);
+      }
     };
 
     window.addEventListener('beforeunload', handleExit);
@@ -198,7 +202,9 @@ const AnalyticsTracker = () => {
 
   // Track Custom User Actions
   const handleCustomAction = (action: string) => {
-    sendGtagEvent('User Interaction', action, pathname);
+    if (pathname) {
+      sendGtagEvent('User Interaction', action, pathname);
+    }
   };
 
   // Example of calling the function when a custom action occurs
@@ -209,12 +215,18 @@ const AnalyticsTracker = () => {
     const formFields = document.querySelectorAll("input, textarea, select");
 
     formFields.forEach((field) => {
-      field.addEventListener('focus', () => {
-        sendGtagEvent('User Interaction', 'form_field_focus', field.name);
+      field.addEventListener('focus', (event) => {
+        const target = event.target as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+        if (target.name && pathname) {
+          sendGtagEvent('User Interaction', 'form_field_focus', target.name);
+        }
       });
 
-      field.addEventListener('input', () => {
-        sendGtagEvent('User Interaction', 'form_field_input', field.name);
+      field.addEventListener('input', (event) => {
+        const target = event.target as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+        if (target.name && pathname) {
+          sendGtagEvent('User Interaction', 'form_field_input', target.name);
+        }
       });
     });
 
@@ -224,18 +236,20 @@ const AnalyticsTracker = () => {
         field.removeEventListener('input', () => {});
       });
     };
-  }, []);
+  }, [pathname]);
 
   // Track Page Load Time
   useEffect(() => {
-    const loadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
-    sendGtagEvent('Performance', 'page_load_time', pathname, loadTime);
+    if (pathname) {
+      const loadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
+      sendGtagEvent('Performance', 'page_load_time', pathname, loadTime);
+    }
   }, [pathname]);
 
   // Track User Interactions with Navigation
   useEffect(() => {
     const handleNavClick = (event: MouseEvent) => {
-      if (event.target.closest('nav, .sidebar')) {
+      if (event.target.closest('nav, .sidebar') && pathname) {
         const target = event.target as HTMLElement;
         sendGtagEvent('User Interaction', 'navigation_click', `${target.tagName} - ${target.textContent}`);
       }
@@ -243,22 +257,24 @@ const AnalyticsTracker = () => {
 
     document.addEventListener('click', handleNavClick);
     return () => document.removeEventListener('click', handleNavClick);
-  }, []);
+  }, [pathname]);
 
   // Track Multi-Device Usage
   useEffect(() => {
-    if (window.gtag) {
+    if (window.gtag && pathname) {
       window.gtag('set', { 'user_id': 'USER_ID' }); // Ensure 'USER_ID' is unique per user
     }
-  }, []);
+  }, [pathname]);
 
   // Track Internal Site Search
   useEffect(() => {
     const searchInput = document.querySelector('[name="search"]');
     if (searchInput) {
       searchInput.addEventListener('input', () => {
-        const searchQuery = searchInput.value;
-        sendGtagEvent('User Engagement', 'search_query', searchQuery);
+        const searchQuery = (searchInput as HTMLInputElement).value;
+        if (pathname) {
+          sendGtagEvent('User Engagement', 'search_query', searchQuery);
+        }
       });
     }
   }, []);
@@ -269,7 +285,9 @@ const AnalyticsTracker = () => {
     socialButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const platform = button.getAttribute('data-platform');
-        sendGtagEvent('Social Media', 'share', platform);
+        if (platform && pathname) {
+          sendGtagEvent('Social Media', 'share', platform);
+        }
       });
     });
   }, []);
