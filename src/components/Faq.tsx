@@ -9,30 +9,22 @@ type ContentArray = ContentItem[];
 
 const content1: ContentArray = [
   {
-    heading: "Question 1?",
+    heading: "What ingredients do you use in your candles?",
     content: `
-            <p>Type:</p>
-            <ul style="list-style-type: inherit; padding-left: 25px;">
-            <li>ONE</li>
-            <li>TWO</li>
-            <li>THREE</li>
-           </ul>
-            <p>Our goal is to provide <span style="font-weight: 500;">clear and honest recommendations</span> so you can make the right decision.</p>
+            <p>Our candles are crafted with high-quality, non-toxic ingredients, including natural soy wax, premium fragrance oils, and lead-free cotton wicks for a clean and long-lasting burn.</p>
           `,
   },
   {
-    heading: "Question 2?",
+    heading: "Do you offer customized or private-label candles?",
     content: `
-            <p>MOHIT. <span style="font-weight: 500;">Singh</span></p>
-            <p>Blah</p>
+            <p>Yes! We provide wholesale and private-label options. You can customize scents, packaging, and branding to suit your needs. Contact us for details.</p>
+            <p><a href="https://forms.gle/HpyNvwVGreEcgtRS6"</a> <span style="font-weight: 500;">Get in Touch</span></p>
           `,
   },
   {
-    heading: "Question 3?",
+    heading: "Are Whiimsy candles eco-friendly?",
     content: `
-            <p>Mohit. <span style="font-weight: 500;">Singh.</span></p>
-            <p>Mohit Singh.</p>
-            <p>Mohit Singh <a href="https://track.vpns.guide/base2.php?cloid=1002&token4=faq&token5=IN">BLAH</a>. <span style="font-weight: 500;">Mohit Singh.</span></p>
+            <p>Absolutely! We use sustainable materials, eco-friendly packaging, and prioritize ethical sourcing to reduce environmental impact.</p>
           `,
   },
   {

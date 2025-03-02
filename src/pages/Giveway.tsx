@@ -14,8 +14,8 @@ const Giveway: React.FC = () => {
                 <div className="flex flex-col justify-center items-center">
                         <div className="h-[160px] tablet:h-[250px] laptop:h-[300px] aspect-video relative mb-8">
                                 <Image
-                                    src="/demo.jpg"
-                                    alt="About"
+                                    src="/giveaway/GiveAway.webp"
+                                    alt="GiveAway"
                                     layout="fill" // Use `layout` instead of `fill` for Next.js Image component
                                     className="mt-4 tablet:mt-6 laptop:mt-8"
                                 />

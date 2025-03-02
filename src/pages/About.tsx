@@ -15,10 +15,10 @@ const About: React.FC = () => {
             <div className="flex flex-col justify-center items-center">
                 <div className="h-[160px] tablet:h-[250px] laptop:h-[300px] aspect-video relative mb-8">
                         <Image
-                            src="/demo.jpg"
+                            src="/about/About.webp"
                             alt="About"
                             layout="fill" // Use `layout` instead of `fill` for Next.js Image component
-                            className="mt-4 tablet:mt-6 laptop:mt-8"
+                            className="mt-4 tablet:mt-6 laptop:mt-2 mb-2"
                         />
                 </div>
                 <div className="flex flex-col justify-center items-center px-6 sm:px-12 md:px-20 lg:px-40 text-gray-700">
@@ -49,10 +49,10 @@ const About: React.FC = () => {
             <div className="flex flex-col justify-center items-center">
                 <div className="h-[160px] tablet:h-[250px] laptop:h-[300px] aspect-video relative mb-8">
                         <Image
-                            src="/demo.jpg"
-                            alt="About"
+                            src="/about/AboutProduct.webp"
+                            alt="About Our Product"
                             layout="fill" // Use `layout` instead of `fill` for Next.js Image component
-                            className="mt-4 tablet:mt-6 laptop:mt-8"
+                            className="mt-4 tablet:mt-6 laptop:mt-2 mb-2"
                         />
                 </div>
                 <div className="flex flex-col justify-center items-center px-4 sm:px-10 md:px-20 lg:px-40">

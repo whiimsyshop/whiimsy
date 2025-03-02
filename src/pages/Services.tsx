@@ -118,7 +118,7 @@ const ServicesPage: React.FC = () => {
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Workshop" style={{ objectFit: "cover" }} />
+            <Image src="/services/workshop.webp" fill alt="Workshop" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
@@ -146,7 +146,7 @@ const ServicesPage: React.FC = () => {
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Recycle Program" style={{ objectFit: "cover" }} />
+            <Image src="/services/recycle.webp" fill alt="Recycle Program" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
@@ -174,7 +174,7 @@ const ServicesPage: React.FC = () => {
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Workshop" style={{ objectFit: "cover" }} />
+            <Image src="/services/corporate.webp" fill alt="Corporates" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
@@ -202,7 +202,7 @@ const ServicesPage: React.FC = () => {
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Recycle Program" style={{ objectFit: "cover" }} />
+            <Image src="/services/collaboration.webp" fill alt="COllaborations" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
@@ -231,7 +231,7 @@ const ServicesPage: React.FC = () => {
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Fund Raising" style={{ objectFit: "cover" }} />
+            <Image src="/services/fundraising.webp" fill alt="Fund Raising" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
@@ -259,7 +259,7 @@ const ServicesPage: React.FC = () => {
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Wholesale" style={{ objectFit: "cover" }} />
+            <Image src="/services/wholesale.webp" fill alt="Wholesale" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
@@ -292,7 +292,7 @@ const ServicesPage: React.FC = () => {
 
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="imageHolder relative aspect-video w-full">
-            <Image src="/demo.jpg" fill alt="Donations" style={{ objectFit: "cover" }} />
+            <Image src="/services/donation.webp" fill alt="Donations" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
