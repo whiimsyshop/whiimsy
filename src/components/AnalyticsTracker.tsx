@@ -9,8 +9,6 @@ declare global {
   }
 }
 
-const GA_TRACKING_ID = "G-JGVYE0JRWB"; // Define Google Analytics Tracking ID
-
 const AnalyticsTracker = () => {
   const pathname = usePathname();
 
@@ -21,11 +19,10 @@ const AnalyticsTracker = () => {
     }
   }, [pathname]);
 
-  // 📌 Track Click Events (including "Shop Now", "Add to Cart", "Wishlist", etc.)
+  // 📌 Track Click Events
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       if (!window.gtag) return;
-
       const target = event.target as HTMLElement;
       const targetText = target.innerText?.trim();
       const targetId = target.id || target.className || "Unknown";
@@ -33,7 +30,7 @@ const AnalyticsTracker = () => {
       // 🖱️ General Click Tracking
       window.gtag("event", "click", {
         event_category: "User Interaction",
-        event_label: target.tagName + " - " + targetId,
+        event_label: `${target.tagName} - ${targetId}`,
       });
 
       // 🛍️ "Shop Now" Button Click
@@ -46,7 +43,7 @@ const AnalyticsTracker = () => {
       }
 
       // 🛒 "Add to Cart" Button Click
-      if (targetText === "Add to Cart" || target.classList.contains("add-to-cart-button")) {
+      if (target.classList.contains("add-to-cart-button")) {
         window.gtag("event", "add_to_cart", {
           event_category: "E-commerce",
           event_label: "Add to Cart",
@@ -55,7 +52,7 @@ const AnalyticsTracker = () => {
       }
 
       // ❤️ "Wishlist" Button Click
-      if (targetText === "Wishlist" || target.classList.contains("wishlist-button")) {
+      if (target.classList.contains("wishlist-button")) {
         window.gtag("event", "add_to_wishlist", {
           event_category: "E-commerce",
           event_label: "Wishlist",
@@ -64,35 +61,34 @@ const AnalyticsTracker = () => {
       }
 
       // 📸 Promo Banner Click
-if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
-  const imgTarget = target as HTMLImageElement; // ✅ Fix: Cast target to HTMLImageElement
-  window.gtag("event", "banner_click", {
-    event_category: "Promotion",
-    event_label: imgTarget.alt || "Promo Banner",
-  });
-}
-
-
-      // ▶️ Video Play (for embedded YouTube videos)
-      if (target.tagName === "IFRAME" && target.src.includes("youtube.com")) {
-        window.gtag("event", "video_play", {
-          event_category: "Media Engagement",
-          event_label: target.src,
+      if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
+        const imgTarget = target as HTMLImageElement;
+        window.gtag("event", "banner_click", {
+          event_category: "Promotion",
+          event_label: imgTarget.alt || "Promo Banner",
         });
+      }
+
+      // ▶️ Video Play (YouTube)
+      if (target.tagName === "IFRAME") {
+        const iframeTarget = target as HTMLIFrameElement;
+        if (iframeTarget.src.includes("youtube.com")) {
+          window.gtag("event", "video_play", {
+            event_category: "Media Engagement",
+            event_label: iframeTarget.src,
+          });
+        }
       }
     };
 
     document.addEventListener("click", handleClick);
-    return () => {
-      document.removeEventListener("click", handleClick);
-    };
+    return () => document.removeEventListener("click", handleClick);
   }, [pathname]);
 
   // 📌 Track Scroll Depth
   useEffect(() => {
     const handleScroll = () => {
       if (!window.gtag) return;
-
       const scrollDepth = ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight) * 100;
       window.gtag("event", "scroll", {
         event_category: "User Interaction",
@@ -102,33 +98,15 @@ if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // 📌 Track Visibility Change (when user switches tabs)
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (!window.gtag) return;
-
-      window.gtag("event", "visibility_change", {
-        event_category: "User Engagement",
-        event_label: document.visibilityState,
-      });
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // 📌 Track Time Spent on Page
   useEffect(() => {
-    let startTime = Date.now();
+    const startTime = Date.now();
     return () => {
-      let timeSpent = Math.round((Date.now() - startTime) / 1000);
+      if (!window.gtag) return;
+      const timeSpent = Math.round((Date.now() - startTime) / 1000);
       window.gtag("event", "time_on_page", {
         event_category: "User Engagement",
         event_label: pathname,
@@ -137,9 +115,10 @@ if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
     };
   }, [pathname]);
 
-  // 📌 Track Exit Intent (detect when user moves cursor out of viewport)
+  // 📌 Track Exit Intent
   useEffect(() => {
     const handleExitIntent = (event: MouseEvent) => {
+      if (!window.gtag) return;
       if (event.clientY < 10) {
         window.gtag("event", "exit_intent", {
           event_category: "User Behavior",
@@ -147,26 +126,31 @@ if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
         });
       }
     };
+
     document.addEventListener("mouseleave", handleExitIntent);
     return () => document.removeEventListener("mouseleave", handleExitIntent);
   }, []);
 
-  // 📌 Track Form Submissions (e.g., Newsletter, Contact)
+  // 📌 Track Form Submissions
   useEffect(() => {
-    const forms = document.querySelectorAll("form");
-    forms.forEach((form) => {
-      form.addEventListener("submit", () => {
-        window.gtag("event", "form_submission", {
-          event_category: "User Engagement",
-          event_label: "Form Submitted",
-          page_path: pathname,
-        });
+    const handleSubmit = (event: Event) => {
+      if (!window.gtag) return;
+      window.gtag("event", "form_submission", {
+        event_category: "User Engagement",
+        event_label: "Form Submitted",
+        page_path: pathname,
       });
-    });
+    };
+
+    const forms = document.querySelectorAll("form");
+    forms.forEach((form) => form.addEventListener("submit", handleSubmit));
+
+    return () => forms.forEach((form) => form.removeEventListener("submit", handleSubmit));
   }, [pathname]);
 
   // 📌 Track Product Page Views
   useEffect(() => {
+    if (!window.gtag) return;
     if (pathname.includes("/product/")) {
       window.gtag("event", "view_product", {
         event_category: "E-commerce",
@@ -175,8 +159,9 @@ if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
     }
   }, [pathname]);
 
-  // 📌 Track UTM Parameters (for marketing campaigns)
+  // 📌 Track UTM Parameters (Marketing Campaigns)
   useEffect(() => {
+    if (!window.gtag) return;
     const urlParams = new URLSearchParams(window.location.search);
     const utmSource = urlParams.get("utm_source");
     const utmMedium = urlParams.get("utm_medium");
@@ -191,20 +176,22 @@ if (target.tagName === "IMG" && target.classList.contains("promo-banner")) {
     }
   }, []);
 
-  // 📌 Capture Click Position (Heatmap Simulation)
+  // 📌 Track Click Position (Heatmap Simulation)
   useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
+    const handleClickPosition = (event: MouseEvent) => {
+      if (!window.gtag) return;
       window.gtag("event", "click_position", {
         event_category: "User Interaction",
         event_label: `X: ${event.clientX}, Y: ${event.clientY}`,
         page_path: pathname,
       });
     };
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+
+    document.addEventListener("click", handleClickPosition);
+    return () => document.removeEventListener("click", handleClickPosition);
   }, [pathname]);
 
-  return null; // Component does not render anything
+  return null; // No UI rendering
 };
 
 export default AnalyticsTracker;
