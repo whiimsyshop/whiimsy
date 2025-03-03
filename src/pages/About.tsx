@@ -25,7 +25,7 @@ const About: React.FC = () => {
                 </div>
                 <div className="flex flex-col justify-center items-center px-6 sm:px-12 md:px-20 lg:px-40 text-gray-700">
                   <p className="text-center text-sm sm:text-base md:text-lg mb-4 font-medium">
-                   <strong>Whiimsy whiimsy candles are more than just décor—they're a little reminder to slow down, breathe, unwind, and escape to your happy place.</strong>
+                   <strong>Whiimsy candles are more than just décor—they're a little reminder to slow down, breathe, unwind, and escape to your happy place.</strong>
                   </p>
                   <p className="text-left text-sm sm:text-base md:text-lg mb-4 text-gray-700 font-medium">
                   At Whiimsy, we believe a great candle is more than just a source of light—it's an experience, a memory, a mood. Our passion for premium candles drives us to craft luxurious, handcrafted pieces that illuminate spaces and uplift spirits. 

@@ -40,19 +40,20 @@ html {
 
 .image-container {
   width: 100%;
-  height: 40rem; /* Default for desktop */
-  overflow: hidden;
+  height: 45rem; /* Maintain aspect ratio */ /*add :auto; for same image size*/
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative; /* Important for button positioning */
+  overflow: hidden;
 }
 
 /* Image inside the div */
 .image-container img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* Auto height to maintain aspect ratio */
+  object-fit: contain; /* Ensures the full image is shown */
+  object-position: center;
 }
 
 .shop-now-button {
@@ -80,7 +81,8 @@ html {
 /* -------------------------- Tablet Screens (1024px & 768px) -------------------------- */
 @media (max-width: 1024px) {
   .image-container {
-    height: 28rem; /* Adjusted for better aspect ratio */
+    height: auto; /* Adjusted for better aspect ratio */
+    max-height: 28rem; /* Ensures it doesn't become too large */
   }
 
   .shop-now-button {
@@ -92,7 +94,8 @@ html {
 
 @media (max-width: 768px) {
   .image-container {
-    height: 24rem; /* Slightly reduced height */
+    height: auto; /* Slightly reduced height */
+    max-height: 24rem;
   }
 
   .shop-now-button {
@@ -105,15 +108,23 @@ html {
 /* -------------------------- Mobile Screens (480px & below) -------------------------- */
 @media (max-width: 480px) {
   .image-container {
-    height: 20rem;
+    height: auto; /* Maintains aspect ratio */
+    max-height: 20rem; /* Ensures it doesn’t exceed this height */
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Prevents cropping */
   }
 
   .shop-now-button {
-    bottom: 2rem;
+    bottom: 1.5rem; /* Adjusted for better spacing */
     font-size: 14px;
     padding: 10px 24px;
   }
 }
+
 
 
 
