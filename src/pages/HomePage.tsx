@@ -1,11 +1,12 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-import EmailSubscription from "../components/EmailSubsctiption";
-import Trust from "../components/Trust";
-import Heart from '../components/Heart';
 import Cateogry from '../components/Cateogry';
-import Feature from '../components/Feature';
+import Trust from "../components/Trust";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import EmailSubscription from "../components/EmailSubsctiption";
+import Heart from '../components/Heart';
+import Feature from '../components/Feature';
+
 
 const Faq = dynamic(() => import("@/components/Faq"), { ssr: true });
 

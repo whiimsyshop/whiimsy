@@ -107,8 +107,8 @@ const ServicesPage: React.FC = () => {
           </p>
           <p className="text-justify text-xl mt-6">Please click on the button below to find out more information.</p>
           <Link
-            href="/workshop"
-            target="_blank"
+            href=""
+            target=""
             rel="noopener noreferrer"
             className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200 cursor-not-allowed" 
           >
@@ -135,7 +135,7 @@ const ServicesPage: React.FC = () => {
           </p>
           <p className="text-justify text-xl mt-6">Schedule a drop off time! See you soon..</p>
           <Link
-            href="/https://wa.me/+918981256860?text=Hey!%20Whiimsy%20Team.%20I%20would%20like%20to%20know%20more%20about%20Recycle%20Program."
+            href="https://wa.me/+918981256860?text=Hey!%20Whiimsy%20Team.%20I%20would%20like%20to%20know%20more%20about%20Recycle%20Program."
             target="_blank"
             rel="noopener noreferrer"
             className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200"
@@ -163,8 +163,8 @@ const ServicesPage: React.FC = () => {
           </p>
           <p className="text-justify text-xl mt-6">Please click on the button below to find out more information.</p>
           <Link
-            href="/corporate"
-            target="_blank"
+            href=""
+            target=""
             rel="noopener noreferrer"
             className="self-start mt-6 rounded-full bg-white px-8 py-3 font-semibold text-col5 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-gray-200 cursor-not-allowed"
           >

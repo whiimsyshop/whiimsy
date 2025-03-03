@@ -77,6 +77,31 @@ html {
   background-color: #d6c2af;
 }
 
+/* -------------------------- Tablet Screens (1024px & 768px) -------------------------- */
+@media (max-width: 1024px) {
+  .image-container {
+    height: 30rem;
+  }
+
+  .shop-now-button {
+    bottom: 8%;
+    font-size: 18px;
+    padding: 14px 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    height: 22rem;
+  }
+
+  .shop-now-button {
+    bottom: 7%;
+    font-size: 16px;
+    padding: 12px 30px;
+  }
+}
+
 /* -------------------------- Mobile Responsiveness -------------------------- */
 @media (max-width: 768px) {
   .image-container {
