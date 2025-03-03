@@ -5,7 +5,7 @@ const features = [
   { name: "Unique Aroma Blends", icon: "/home/why/b.jpg" },
   { name: "Made in Small Batches", icon: "/home/why/c.jpg" },
   { name: "Cruelty Free Products", icon: "/home/why/d.jpg" },
-  { name: "Recycle & Reduce", icon: "/home/why/e.jpg" },
+  { name: "Recycle & Reuse", icon: "/home/why/e.jpg" },
   { name: "Paraben Free", icon: "/home/why/f.jpg" },
 ];
 

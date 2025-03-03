@@ -40,7 +40,7 @@ html {
 
 .image-container {
   width: 100%;
-  height: 40rem;
+  height: 40rem; /* Default for desktop */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -80,11 +80,11 @@ html {
 /* -------------------------- Tablet Screens (1024px & 768px) -------------------------- */
 @media (max-width: 1024px) {
   .image-container {
-    height: 30rem;
+    height: 28rem; /* Adjusted for better aspect ratio */
   }
 
   .shop-now-button {
-    bottom: 8%;
+    bottom: 4%;
     font-size: 18px;
     padding: 14px 36px;
   }
@@ -92,38 +92,26 @@ html {
 
 @media (max-width: 768px) {
   .image-container {
-    height: 22rem;
+    height: 24rem; /* Slightly reduced height */
   }
 
   .shop-now-button {
-    bottom: 7%;
+    bottom: 3%;
     font-size: 16px;
-    padding: 12px 30px;
+    padding: 12px 28px;
   }
 }
 
-/* -------------------------- Mobile Responsiveness -------------------------- */
-@media (max-width: 768px) {
-  .image-container {
-    height: 25rem; /* Reduce height on smaller screens */
-  }
-
-  .shop-now-button {
-    bottom: 2rem;
-    font-size: 16px;
-    padding: 10px 25px;
-  }
-}
-
+/* -------------------------- Mobile Screens (480px & below) -------------------------- */
 @media (max-width: 480px) {
   .image-container {
     height: 20rem;
   }
 
   .shop-now-button {
-    bottom: 1.5rem;
+    bottom: 2rem;
     font-size: 14px;
-    padding: 8px 20px;
+    padding: 10px 24px;
   }
 }
 
