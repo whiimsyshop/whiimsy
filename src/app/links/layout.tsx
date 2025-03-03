@@ -8,7 +8,7 @@ export default function linkPageLayout({
   return (
     <>
     {/* canonical tag */}
-    <link rel="canonical" href="https://whiimsy.in/link" />
+    <link rel="canonical" href="https://whiimsy.in/links" />
       <section>
         {children}
       </section>

@@ -12,6 +12,7 @@ Allow: /privacy-policy
 Allow: /cookies
 Allow: /terms-and-conditions
 Allow: /return-and-shipping
+Allow: /links
 
 # Block all crawlers for /accounts (if applicable)
 User-agent: *
