@@ -82,7 +82,7 @@ html {
 @media (max-width: 1024px) {
   .image-container {
     height: auto; /* Adjusted for better aspect ratio */
-    width:auto;
+    width:100vw;
     max-height: 28rem; /* Ensures it doesn't become too large */
   }
 
