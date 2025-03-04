@@ -11,32 +11,24 @@ const ReturnShipping_Condition = () => {
         <div className="px-3 pt-6 tablet:w-2/3">
           <h2 className="text-left font-bold text-2xl mb-5">Return Policy</h2>
           <p className="text-justify text-[16px] mb-4  ">
-          We ONLY OFFER EXCHANGE of products that are unused. We do not offer returns or refunds on any products.
+          At whiimsy, we take great care in crafting and packaging our products to ensure they reach you in perfect condition. Since candles are fragile and handcrafted items, we do not accept returns or exchanges. However, if you receive the wrong product or a damaged item, we’re here to help!
           </p>
-          <p>Step-By-Step Process:</p>
-          <p>Within 14 days of your order, please send an email to whiimsyteam@gmail.com with the subject line "Exchange Request", 
-            letting us know the reason for the exchange, the product you would like to exchange for, and the correct shipping address.
-          </p>
-          <p>
-          Once your exchange request is approved we will send you the exchange address and your Exchange Authorization Number. 
-          Please do not send your exchange to the return address on your shipping label.
-          </p>
-          <p>
-          Please be sure that your package is returned using all of the materials that it was packed in or something similar.  
-          Be sure that the products are protected and packed securely so that they arrive in good condition. 
-          Products that are damaged will be assessed on a case by case basis.
-          </p>
-          <p>
-          The buyer is responsible for shipping costs on all exchanges, please save tracking information.
-          </p>
-          <p>
-          Once the purchased products have been received, the exchange product will be shipped via the same method from the original purchase. 
-          If an expedited shipping method is needed, please indicate this in your "Exchange Request" email. 
-          We will send an invoice for the upgrade.
-          </p>
-          <p>
-          **Exchange of products can be made in person as well. Please make sure to have the form of payment and date purchased.
-          </p>
+          <p><b>Eligibility for Replacement or Refund:</b></p>
+          <p>We offer a replacement or refund only if:</p>
+          <p>You received the wrong product.</p>
+          <p>The product was damaged during transit.</p>
+          <br></br>
+          <p><b>How to Request a Replacement or Refund:</b></p>
+          <p>Email us at whiimsyteam@gmail.com within 24 hours of delivery.</p>
+          <p>Attach clear pictures and an unboxing video as proof of damage or incorrect product.</p>
+          <p>Our team will review your request and respond within 2-3 business days</p>
+          <br></br>
+          <p><b>Important Notes:</b></p>
+          <p>No refunds or replacements will be issued for minor variations in color, texture, or scent, as each candle is handcrafted.</p>
+          <p>Requests without proper proof (video & images) will not be accepted.</p>
+          <p>If eligible, refunds will be processed within 5-7 business days to the original payment method.</p>
+          <br></br>
+          <p>For any concerns, reach out to us at <a href="mailto:whiimsyteam@gmail.com">whiimsyteam@gmail.com</a> —we're happy to assist you!</p>
 
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">Shipping Policy</h2>
@@ -44,26 +36,33 @@ const ReturnShipping_Condition = () => {
             You agree that use of the Website is at your own risk. In
             particular, you understand that:
           </p>
-          <p>
-          We offer Flat Rate Shipping at the cost of ₹100. This is an average cost for packages within the US. If the rate is over this fee we will cover the rest.
-          </p>
-          <p>
-          Processing Time: 24 - 72 hours for all in stock items, once the item is located, your payment is approved, and the receiving address is verified. 
-          For most orders, this process begins once your online order has been submitted. Depending on the time you place your order, 
-          the order process might not start until the following business day.
-          </p>
-          <p>
-          Delivery Time: The timeframe to receive your packages is within 7-15 business days. 
-          We will provide a tracking number via email for you to track your package. Once you receive the tracking number, 
-          it will be in the hands of the shipping carrier. We will not be able to change any timeframes.
-          </p>
-          <p>
-          Free shipping is offered but no specific time frame is given.
-          </p>
-          <p>
-          Business days are Monday-Saturday, excluding Indian holidays. 
-          During peak periods you may experience longer than average order processing time.
-          </p>
+          <p><b>Processing Time:</b></p>
+          <p>All orders are processed within 2-4 business days (excluding weekends and holidays).</p>
+          <p>During peak seasons or sales, processing times may be slightly longer.</p>
+          <br></br>
+          <p><b>Shipping Time & Charges:</b></p>
+          <p>Standard Shipping: Estimated delivery within 5-10 business days after dispatch.</p>
+          <p>Express Shipping: Estimated delivery within 2-5 business days (additional charges apply).</p>
+          <p>Shipping charges will be calculated at checkout based on your location and selected shipping method.</p>
+          <br></br>
+          <p><b>Order Tracking:</b></p>
+          <p>Once your order is shipped, you will receive a tracking link via email/SMS to monitor your package.</p>
+          <br></br>
+          <p><b>Delivery Delays:</b></p>
+          <p>While we strive for timely delivery, delays may occur due to unforeseen circumstances such as weather, courier delays, or high demand.</p>
+          <p>If your order is significantly delayed, please contact us at your customer support email at whiimsyteam@gmail.com.</p>
+          <br></br>
+          <p><b>International Shipping:</b></p>
+          <p>Currently, we ship only within India.</p>
+          <br></br>
+          <p><b>Damaged/Lost Packages:</b></p>
+          <p>If your package arrives damaged, please email us within 48 hours with pictures of the damaged product and packaging.</p>
+          <p>We are not responsible for lost packages due to incorrect addresses provided at checkout.</p>
+          <br></br>
+          <p><b>Address Changes & Cancellations:</b></p>
+          <p>Address changes or cancellations can be requested within 12 hours of placing the order. Once the order is processed, we cannot make changes.</p>
+          <br></br>
+          <p>For any questions, reach out to us at <a href="mailto:whiimsyteam@gmail.com">whiimsyteam@gmail.com</a></p>
 
           <h2 className="text-left font-semibold text-2xl mb-5 mt-10">How to Contact Us</h2>
           <p className="text-justify text-[16px] mb-4  "></p>
@@ -72,9 +71,9 @@ const ReturnShipping_Condition = () => {
               questions about our cookies or this policy, <p>
               Please contact us at 
               <a href="mailto:whiimsyteam@gmail.com" className="text-sm hover:text-gray-300">
-              <span className="pl-1">whiimsyteam@gmail.com</span>
+              <span className="pl-1">whiimsyteam@gmail.com </span>
               </a>
-              and we will get back to you within two working days.
+               and we will get back to you within two working days.
             </p>
 
             </p>
