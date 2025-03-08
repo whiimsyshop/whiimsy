@@ -4,11 +4,11 @@ const categories =
 [
   { name: "Soy Candles", icon: "/home/category/candles.png", link: "" },
   { name: "Bulk Orders", icon: "/home/category/bulk.png", link: "" },
-  { name: "Ceramic Vases", icon: "/home/category/ceramic.png", link: "" },
+  { name: "Concrete Vases", icon: "/home/category/concrete.png", link: "" },
   { name: "Candle Pouring", icon: "/home/category/pouring.png", link: "" },
   { name: "Fragnance Bar", icon: "/home/category/bar.png", link: "" },
   { name: "Live Events", icon: "/home/category/event.png", link: "" },
-  { name: "Ceramic Tray", icon: "/home/category/ceramic.png",link: "" },
+  { name: "Concrete Tray", icon: "/home/category/concrete.png",link: "" },
   { name: "Gift Boxes", icon: "/home/category/gift.png", link: "" },
   { name: "Ceramic Diffuser", icon: "/home/category/diffuser.png", link: "" },
   { name: "Wax Melts", icon: "/home/category/melts.png", link: "" },
