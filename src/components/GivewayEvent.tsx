@@ -18,11 +18,11 @@ const GivewayEvent = () => {
         {
             title: "Giveaway 2",
             content: [
-                "Start Date: 07 Apr 2025",
+                "Start Date: 20 Apr 2025",
                 "End Date: 12 Apr 2025"
             ],
-            imageurl: "/giveaway/giveaway.jpg",
-            link: ""
+            imageurl: "/giveaway/giveaway2.png",
+            link: "https://www.instagram.com/whiimsy.in/p/DIqZBGSzx7_/"
         },
         {
             title: "Giveaway 3",
